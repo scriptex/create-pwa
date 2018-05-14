@@ -2,8 +2,18 @@
 	"name": "create-pwa",
 	"version": "0.0.0",
 	"description": "Easily create a progressive web app",
-	"keywords": "PWA, CLI, Scaffold",
-	"main": "index.js",
+	"scripts": {
+		"test": "node ./test/index.js"
+	},
+	"bin": {
+		"create-pwa": "./src/index.js"
+	},
+	"keywords": [
+		"PWA",
+		"CLI",
+		"Scaffold"
+	],
+	"main": "src/index.js",
 	"repository": "git@github.com:scriptex/create-pwa.git",
 	"bugs": {
 		"url": "https://github.com/scriptex/create-pwa/issues",
@@ -11,5 +21,7 @@
 	},
 	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
 	"license": "MIT",
-	"private": false
+	"private": false,
+	"dependencies": {},
+	"devDependencies": {}
 }
