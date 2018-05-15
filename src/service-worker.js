@@ -1,10 +1,15 @@
+/**
+ * By default the home route is cached
+ */
 const routes = `[
-	'/'
-]`;
+				'/'
+			]`;
 
+/**
+ * Generate a service-worker.js file
+ */
 module.exports = function(name) {
-	return `
-self.addEventListener('install', function(event) {
+	return `self.addEventListener('install', function(event) {
 	event.waitUntil(
 		caches.open('${name}-cache').then(function(cache) {
 			return cache.addAll(${routes});
