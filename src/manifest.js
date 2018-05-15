@@ -1,10 +1,17 @@
+/**
+ * Generate a manifest.json file
+ */
 module.exports = function(name) {
 	return `{
+	"lang": "en",
+	"dir": "ltr",
 	"name": "${name}",
 	"short_name": "${name}",
+	"description": "",
 	"theme_color": "#000",
 	"background_color": "#000",
-	"display": "browser",
+	"display": "standalone",
+	"orientation": "portrait",
 	"scope": "/",
 	"start_url": "/",
 	"icons": [
