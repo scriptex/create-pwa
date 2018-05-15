@@ -1,6 +1,6 @@
 {
 	"name": "create-pwa",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Easily create a progressive web app",
 	"scripts": {
 		"test": "node ./test/index.js"
