@@ -4,11 +4,17 @@
  * Node dependencies
  */
 const { dirname, resolve, sep } = require('path');
-const { existsSync, writeFileSync } = require('fs');
+const { existsSync, writeFileSync, mkdirSync } = require('fs');
+
+/**
+ * External dependencies
+ */
+const argv = require('yargs').argv;
 
 /**
  * Internal dependencies
  */
+const generateIcons = require('./icons');
 const manifestTemplate = require('./manifest');
 const serviceWorkerTemplate = require('./service-worker');
 
@@ -21,11 +27,10 @@ const pwd = process.env.PWD;
  * Get application's name
  */
 const getAppName = () => {
-	if (
-		existsSync(resolve(pwd, 'package.json')) &&
-		require(resolve(pwd, 'package.json')).name
-	) {
-		return require(resolve(pwd, 'package.json')).name;
+	const pkg = resolve(pwd, 'package.json');
+
+	if (existsSync(pkg) && require(pkg).name) {
+		return require(pkg).name;
 	}
 
 	return pwd.split(sep).pop();
@@ -49,10 +54,27 @@ const setServiceWorker = name => {
 };
 
 /**
+ * Create app's icons
+ */
+const setIcons = icon => {
+	const ext = icon.split('.').pop();
+	const image = resolve(pwd, icon);
+	const dir = resolve(pwd, 'icons');
+
+	if (!existsSync(dir)) {
+		mkdirSync(dir);
+	}
+
+	generateIcons(image, dir);
+};
+
+/**
  * Create all PWA required files
  */
 const create = () => {
 	const name = getAppName();
+
+	argv.icon && setIcons(argv.icon);
 
 	setManifest(name);
 	setServiceWorker(name);
