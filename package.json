@@ -11,7 +11,10 @@
 	"keywords": [
 		"PWA",
 		"CLI",
-		"Scaffold"
+		"Scaffold",
+		"manifest",
+		"webapp",
+		"service-worker"
 	],
 	"main": "src/index.js",
 	"repository": "git@github.com:scriptex/create-pwa.git",
@@ -21,7 +24,9 @@
 	},
 	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
 	"license": "MIT",
-	"private": false,
 	"dependencies": {},
-	"devDependencies": {}
+	"devDependencies": {
+		"sharp": "^0.20.2",
+		"yargs": "^11.0.0"
+	}
 }
