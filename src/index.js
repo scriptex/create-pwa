@@ -57,9 +57,8 @@ const setServiceWorker = name => {
  * Create app's icons
  */
 const setIcons = icon => {
-	const ext = icon.split('.').pop();
-	const image = resolve(pwd, icon);
 	const dir = resolve(pwd, 'icons');
+	const image = resolve(pwd, icon);
 
 	if (!existsSync(dir)) {
 		mkdirSync(dir);
@@ -83,5 +82,6 @@ const create = () => {
 create();
 
 module.exports = create;
+module.exports.setIcons = setIcons;
 module.exports.setManifest = setManifest;
 module.exports.setServiceWorker = setServiceWorker;
