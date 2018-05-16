@@ -22,12 +22,10 @@ const iconSizes = [
  */
 module.exports = function(icon, folder) {
 	for (const size of iconSizes) {
-		const dimensions = size.split('x');
-		const width = Number(dimensions[0]);
-		const height = Number(dimensions[1]);
+		const [width, height] = size.split('x');
 
 		sharp(icon)
-			.resize(width, height)
+			.resize(Number(width), Number(height))
 			.png()
 			.toFile(`${folder}/icon-${size}.png`);
 	}
