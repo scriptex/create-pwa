@@ -48,7 +48,7 @@ npx create-pwa
 
 ## Arguments
 
-`icon`: Specifies relative path to the application icon. This path is relative to the folder you are located in currently (`your/app/folder`).
+`icon`: Specifies relative path to the application icon. This path is relative to the folder you are located in currently (`your/app/folder`). It is recommended that the icon file should be at least 512 pixels wide and 512 pixels high.
 
 ## Usage
 
