@@ -37,7 +37,11 @@ In order to use this module, you must have NodeJS installed and NPM or Yarn avai
 You can either install `create-pwa` globally:
 
 ```console
+# Using NPM:
 npm i -g create-pwa
+
+# Using Yarn
+yarn global add create-pwa
 ```
 
 or use `npx`:
@@ -48,7 +52,7 @@ npx create-pwa
 
 ## Arguments
 
-`icon`: Specifies relative path to the application icon. This path is relative to the folder you are located in currently (`your/app/folder`). It is recommended that the icon file should be at least 512 pixels wide and 512 pixels high.
+`icon`: Specifies relative path to the application icon. This path is relative to the folder you are located in currently (`your/app/folder`). It is recommended that the icon file should be at least 512 pixels wide and 512 pixels high. **The `icon` argument is required.**
 
 ## Usage
 
@@ -58,7 +62,11 @@ Then run the install command (see above)
 ```console
 cd your/app/folder
 
-npx create-pwa --icon="./icon.png"
+# If installed globally:
+create-pwa --icon="./icon.png"
+
+# Using NPX:
+npx create-pwa 
 ```
 
 The above command will generate a `manifest.json`, `service-worker.js` file and several (8) png icons in the `/icons/` folder in your app's root folder.
