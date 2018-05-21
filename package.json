@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"description": "Easily create a progressive web app",
 	"scripts": {
-		"test": "node ./test/index.js"
+		"test": "tape test.js"
 	},
 	"bin": {
 		"create-pwa": "./src/index.js"
@@ -27,6 +27,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"sharp": "^0.20.2",
+		"tape": "^4.9.0",
 		"yargs": "^11.0.0"
 	}
 }
