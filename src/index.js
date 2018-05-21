@@ -57,6 +57,10 @@ const setServiceWorker = name => {
  * Create app's icons
  */
 const setIcons = icon => {
+	if (!icon) {
+		return;
+	}
+
 	const dir = resolve(pwd, 'icons');
 	const image = resolve(pwd, icon);
 
@@ -70,16 +74,18 @@ const setIcons = icon => {
 /**
  * Create all PWA required files
  */
-const create = () => {
+const create = ({ icon }) => {
 	const name = getAppName();
 
-	argv.icon && setIcons(argv.icon);
+	setIcons(argv.icon || icon);
 
 	setManifest(name);
 	setServiceWorker(name);
 };
 
-create();
+create({
+	icon: './icon.png'
+});
 
 module.exports = create;
 module.exports.setIcons = setIcons;
