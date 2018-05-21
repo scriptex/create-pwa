@@ -45,7 +45,7 @@ tape('Should create a manifest', t => {
 /**
  * Test if the app name is correct
  */
-tape('The name of the app should be "test"', t => {
+tape('The name of the app should be "create-pwa"', t => {
 	t.equal(
 		require(resolve(__dirname, './manifest.json')).name,
 		'create-pwa',
@@ -71,7 +71,7 @@ tape('Should create a service worker', t => {
  */
 tape('Should generate 8 icons', t => {
 	readdir(resolve(__dirname, 'icons'), (err, files) => {
-		t.equal(8, files.length, 'There should be 8 icon files');
+		t.equal(iconSizes.length, files.length, 'There should be 8 icon files');
 	});
 
 	t.end();
