@@ -70,6 +70,6 @@ ehthumbs.db
 Thumbs.db
 
 # Tests
-test/icons
-test/manifest.json
-test/service-worker.js
+icons
+manifest.json
+service-worker.js
