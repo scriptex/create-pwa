@@ -15,12 +15,6 @@
 
 Easily create a progressive web app
 
----
-
-🛠 Status: In Development: `create-pwa` is in constant development.
-
----
-
 ## About
 
 `create-pwa` is a module for quick scaffolding and producing of progressive web applications.
@@ -45,12 +39,6 @@ npm i -g create-pwa
 yarn global add create-pwa
 ```
 
-or use `npx`:
-
-```console
-npx create-pwa --icon="./icon.png"
-```
-
 ## Arguments
 
 `icon`: Specifies relative path to the application icon. This path is relative to the folder you are located in currently (`your/app/folder`). It is recommended that the icon file should be at least 512 pixels wide and 512 pixels high. **The `icon` argument is required.**
@@ -63,11 +51,7 @@ Then run the install command (see above)
 ```console
 cd your/app/folder
 
-# If installed globally:
 create-pwa --icon="./icon.png"
-
-# Using NPX:
-npx create-pwa --icon="./icon.png"
 ```
 
 The above command will generate a `manifest.json`, `service-worker.js` file and several (8) png icons in the `/icons/` folder in your app's root folder.
