@@ -24,10 +24,11 @@
 	},
 	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
 	"license": "MIT",
-	"dependencies": {},
-	"devDependencies": {
+	"dependencies": {
 		"sharp": "^0.20.2",
-		"tape": "^4.9.0",
 		"yargs": "^11.0.0"
+	},
+	"devDependencies": {
+		"tape": "^4.9.0"
 	}
 }
