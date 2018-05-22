@@ -48,7 +48,7 @@ yarn global add create-pwa
 or use `npx`:
 
 ```console
-npx create-pwa
+npx create-pwa --icon="./icon.png"
 ```
 
 ## Arguments
@@ -67,7 +67,7 @@ cd your/app/folder
 create-pwa --icon="./icon.png"
 
 # Using NPX:
-npx create-pwa
+npx create-pwa --icon="./icon.png"
 ```
 
 The above command will generate a `manifest.json`, `service-worker.js` file and several (8) png icons in the `/icons/` folder in your app's root folder.
