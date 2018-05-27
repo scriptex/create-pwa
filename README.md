@@ -29,8 +29,6 @@ In order to use this module, you must have NodeJS installed and NPM or Yarn avai
 
 ## Install
 
-You can either install `create-pwa` globally:
-
 ```console
 # Using NPM:
 npm i -g create-pwa
@@ -41,7 +39,11 @@ yarn global add create-pwa
 
 ## Arguments
 
-`icon`: Specifies relative path to the application icon. This path is relative to the folder you are located in currently (`your/app/folder`). It is recommended that the icon file should be at least 512 pixels wide and 512 pixels high. **The `icon` argument is required.**
+`icon`: Specifies relative path to the application icon. 
+
+This path is relative to the folder you are located in. It is recommended that the icon file should be at least 512 pixels wide and 512 pixels high. 
+
+**The `icon` argument is required.**
 
 ## Usage
 
