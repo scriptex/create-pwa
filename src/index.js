@@ -16,7 +16,7 @@ const argv = require('yargs').argv;
  */
 const generateIcons = require('./icons');
 const manifestTemplate = require('./manifest');
-const serviceWorkerTemplate = require('./service-worker');
+const serviceWorkerTemplate = require('./sw');
 
 /**
  * Get caller's folder
