@@ -72,4 +72,4 @@ Thumbs.db
 # Tests
 icons
 manifest.json
-service-worker.js
+./service-worker.js
