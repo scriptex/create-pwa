@@ -96,7 +96,7 @@ if ('serviceWorker' in navigator) {
       error => {
         console.log(`ServiceWorker registration failed: ${error}`)
       }
-      );
+    );
   });
 }
 ```
