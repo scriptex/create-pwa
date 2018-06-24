@@ -201,11 +201,11 @@ find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-for-each@~0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/for-each/-/for-each-0.3.2.tgz#2c40450b9348e97f281322593ba96704b9abd4d4"
+for-each@~0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/for-each/-/for-each-0.3.3.tgz#69b447e88a0a5d32c3e7084f3f1710034b21376e"
   dependencies:
-    is-function "~1.0.0"
+    is-callable "^1.1.3"
 
 foreach@^2.0.5:
   version "2.0.5"
@@ -273,11 +273,17 @@ has-unicode@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/has-unicode/-/has-unicode-2.0.1.tgz#e0e6fe6a28cf51138855e086d1691e771de2a8b9"
 
-has@^1.0.1, has@~1.0.1:
+has@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/has/-/has-1.0.1.tgz#8461733f538b0837c9361e39a9ab9e9704dc2f28"
   dependencies:
     function-bind "^1.0.2"
+
+has@~1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/has/-/has-1.0.3.tgz#722d7cbfc1f6aa8241f16dd814e011e1f41e8796"
+  dependencies:
+    function-bind "^1.1.1"
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -319,10 +325,6 @@ is-fullwidth-code-point@^1.0.0:
 is-fullwidth-code-point@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/is-fullwidth-code-point/-/is-fullwidth-code-point-2.0.0.tgz#a3b30a5c4f199183167aaab93beefae3ddfb654f"
-
-is-function@~1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/is-function/-/is-function-1.0.1.tgz#12cfb98b65b57dd3d193a3121f5f6e2f437602b5"
 
 is-regex@^1.0.4:
   version "1.0.4"
@@ -450,9 +452,9 @@ object-assign@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
-object-inspect@~1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.5.0.tgz#9d876c11e40f485c79215670281b767488f9bfe3"
+object-inspect@~1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.6.0.tgz#c70b6cbf72f274aab4c34c0c82f5167bf82cf15b"
 
 object-keys@^1.0.8:
   version "1.0.11"
@@ -583,9 +585,9 @@ require-main-filename@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
 
-resolve@~1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.5.0.tgz#1f09acce796c9a762579f31b2c1cc4c3cddf9f36"
+resolve@~1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.7.1.tgz#aadd656374fd298aee895bc026b8297418677fd3"
   dependencies:
     path-parse "^1.0.5"
 
@@ -607,9 +609,9 @@ set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
 
-sharp@^0.20.2:
-  version "0.20.3"
-  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.20.3.tgz#315cbd44c36a0c403433a5d7b50bcbdf81b0ede0"
+sharp@^0.20.4:
+  version "0.20.4"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.20.4.tgz#e334cadd2aa06912bc186f1af1fe22335e1d76f7"
   dependencies:
     color "^3.0.0"
     detect-libc "^1.0.3"
@@ -703,20 +705,20 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-tape@^4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/tape/-/tape-4.9.0.tgz#855c08360395133709d34d3fbf9ef341eb73ca6a"
+tape@^4.9.1:
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/tape/-/tape-4.9.1.tgz#1173d7337e040c76fbf42ec86fcabedc9b3805c9"
   dependencies:
     deep-equal "~1.0.1"
     defined "~1.0.0"
-    for-each "~0.3.2"
+    for-each "~0.3.3"
     function-bind "~1.1.1"
     glob "~7.1.2"
-    has "~1.0.1"
+    has "~1.0.3"
     inherits "~2.0.3"
     minimist "~1.2.0"
-    object-inspect "~1.5.0"
-    resolve "~1.5.0"
+    object-inspect "~1.6.0"
+    resolve "~1.7.1"
     resumer "~0.0.0"
     string.prototype.trim "~1.1.2"
     through "~2.3.8"
