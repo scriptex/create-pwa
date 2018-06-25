@@ -11,6 +11,8 @@
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/scriptex/create-pwa/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/scriptex/create-pwa/graphs/commit-activity) [![Greenkeeper badge](https://badges.greenkeeper.io/scriptex/create-pwa.svg)](https://greenkeeper.io/)
 
+[![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/scriptex/)
+
 # create-pwa
 
 Easily create a progressive web app
