@@ -9,7 +9,7 @@
 [![license](https://img.shields.io/github/license/scriptex/create-pwa.svg)](https://github.com/scriptex/create-pwa)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/create-pwa/README.md)](https://github.com/scriptex/create-pwa/)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/scriptex/create-pwa/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/scriptex/create-pwa/graphs/commit-activity)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/scriptex/create-pwa/graphs/commit-activity) [![Greenkeeper badge](https://badges.greenkeeper.io/scriptex/create-pwa.svg)](https://greenkeeper.io/)
 
 # create-pwa
 
