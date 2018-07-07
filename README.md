@@ -9,7 +9,10 @@
 [![license](https://img.shields.io/github/license/scriptex/create-pwa.svg)](https://github.com/scriptex/create-pwa)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/create-pwa/README.md)](https://github.com/scriptex/create-pwa/)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/scriptex/create-pwa/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/scriptex/create-pwa/graphs/commit-activity) [![Greenkeeper badge](https://badges.greenkeeper.io/scriptex/create-pwa.svg)](https://greenkeeper.io/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/scriptex/create-pwa/graphs/commit-activity)
+[![Greenkeeper badge](https://badges.greenkeeper.io/scriptex/create-pwa.svg)](https://greenkeeper.io/)
+[![dependencies Status](https://david-dm.org/scriptex/create-pwa/status.svg)](https://david-dm.org/scriptex/create-pwa)
+[![devDependencies Status](https://david-dm.org/scriptex/create-pwa/dev-status.svg)](https://david-dm.org/scriptex/create-pwa?type=dev)
 
 [![ForTheBadge built-with-love](https://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/scriptex/)
 
@@ -31,7 +34,7 @@ In order to use this module, you must have NodeJS installed and NPM or Yarn avai
 
 ## Install
 
-```console
+```sh
 # Using NPM:
 npm i create-pwa --save-dev
 
@@ -52,7 +55,7 @@ This path is relative to the folder you are located in. It is recommended that t
 First, navigate to your application's folder:
 Then run the install command (see above)
 
-```console
+```sh
 cd your/app/folder
 
 create-pwa --icon="./icon.png"
@@ -60,11 +63,11 @@ create-pwa --icon="./icon.png"
 
 You can also use `create-pwa` as a package.json script:
 
-```
+```json
 {
-  "scripts": {
-    "pwa": "create-pwa --icon=\"path/to/your/icon.png\""
-  }
+	"scripts": {
+		"pwa": "create-pwa --icon=\"path/to/your/icon.png\""
+	}
 }
 ```
 
@@ -78,7 +81,7 @@ In order to create a customized experience for your users, feel advised to revis
 
 When the files(`manifest.json` and `service-worker.js`) are ready for production, you need to let the world know about them:
 
-1. Add the following to the `head` of your HTML file(s):
+1.  Add the following to the `head` of your HTML file(s):
 
 ```html
 <link rel="manifest" href="manifest.json" />
@@ -86,20 +89,24 @@ When the files(`manifest.json` and `service-worker.js`) are ready for production
 
 You can read more about the Web App Manifest [here](https://developers.google.com/web/fundamentals/web-app-manifest/).
 
-2. Add the following snippet to your application's JavaScript bundle or place it in a `script` tag just before the closing `</body>` tag in your HTML file(s):
+2.  Add the following snippet to your application's JavaScript bundle or place it in a `script` tag just before the closing `</body>` tag in your HTML file(s):
 
-```js
+```javascript
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js').then(
-      registration => {
-        console.log(`ServiceWorker registration successful with scope: ${registration.scope}`)
-      },
-      error => {
-        console.log(`ServiceWorker registration failed: ${error}`)
-      }
-    );
-  });
+	window.addEventListener('load', () => {
+		navigator.serviceWorker.register('./service-worker.js').then(
+			registration => {
+				console.log(
+					`ServiceWorker registration successful with scope: ${
+						registration.scope
+					}`
+				);
+			},
+			error => {
+				console.log(`ServiceWorker registration failed: ${error}`);
+			}
+		);
+	});
 }
 ```
 
