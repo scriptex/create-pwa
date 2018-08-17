@@ -67,6 +67,17 @@ tape('Should create a service worker', t => {
 });
 
 /**
+ * Test if an appcache file is created
+ */
+tape('Should create an appcache file', t => {
+	const ac = resolve(__dirname, './create-pwa.appcache');
+	const appCacheFileExists = existsSync(ac);
+
+	t.ok(appCacheFileExists, 'create-pwa.appcache exists');
+	t.end();
+});
+
+/**
  * Test if icons are being generated
  */
 tape('Should generate 8 icons', t => {

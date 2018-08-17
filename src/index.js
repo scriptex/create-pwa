@@ -16,6 +16,7 @@ const argv = require('yargs').argv;
  */
 const generateIcons = require('./icons');
 const manifestTemplate = require('./manifest');
+const appCacheTemplate = require('./appcache');
 const serviceWorkerTemplate = require('./sw');
 
 /**
@@ -72,13 +73,23 @@ const setIcons = icon => {
 };
 
 /**
+ * Create app's cache manifest
+ */
+const setAppCache = name => {
+	writeFileSync(
+		resolve(pwd, `${name}.appcache`),
+		appCacheTemplate()
+	);
+};
+
+/**
  * Create all PWA required files
  */
 const create = ({ icon }) => {
 	const name = getAppName();
 
 	setIcons(argv.icon || icon);
-
+	setAppCache(name);
 	setManifest(name);
 	setServiceWorker(name);
 };
@@ -89,5 +100,6 @@ create({
 
 module.exports = create;
 module.exports.setIcons = setIcons;
+module.exports.setAppCache = setAppCache;
 module.exports.setManifest = setManifest;
 module.exports.setServiceWorker = setServiceWorker;

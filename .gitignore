@@ -21,3 +21,4 @@ Thumbs.db
 icons
 manifest.json
 service-worker.js
+*.appcache
