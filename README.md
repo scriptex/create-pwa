@@ -95,8 +95,21 @@ if ('serviceWorker' in navigator) {
   });
 }
 ```
+The code above checks for service worker support and then registers a service worker located in the `service-worker.js` file in the root of the project.
 
 You can read more about Service Workers [here](https://developers.google.com/web/fundamentals/primers/service-workers/).
+
+3. (Optional) Add the following attribute to your `html` tag: `manifest="<YOUR_APP_NAME>.appcache"`. It should look something like this:
+
+```html
+<html lang="en" manifest="shire.appcache">
+```
+
+This will enable application cache and will cache all files listen in the `.appcache` file. 
+Application cache is currently deprecated in most evergreen browsers and will probably be removed soon.
+This, however, does not mean that you can not use it in older browsers (for example IE 11).
+
+You can read more about Application Cache [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache)
 
 ## More info
 
