@@ -102,10 +102,10 @@ You can read more about Service Workers [here](https://developers.google.com/web
 3. (Optional) Add the following attribute to your `html` tag: `manifest="<YOUR_APP_NAME>.appcache"`. It should look something like this:
 
 ```html
-<html lang="en" manifest="shire.appcache">
+<html lang="en" manifest="create-pwa.appcache">
 ```
 
-This will enable application cache and will cache all files listen in the `.appcache` file. 
+This will enable application cache and will cache all files listed in the `.appcache` file. 
 Application cache is currently deprecated in most evergreen browsers and will probably be removed soon.
 This, however, does not mean that you can not use it in older browsers (for example IE 11).
 
