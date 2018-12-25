@@ -5,7 +5,6 @@
 [![npm](https://img.shields.io/npm/dt/create-pwa.svg)](https://www.npmjs.com/package/create-pwa)
 [![npm](https://img.shields.io/npm/v/create-pwa.svg)](https://www.npmjs.com/package/create-pwa)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/create-pwa/README.md)](https://github.com/scriptex/create-pwa/)
-[![Greenkeeper badge](https://badges.greenkeeper.io/scriptex/create-pwa.svg)](https://greenkeeper.io/)
 
 # create-pwa
 
