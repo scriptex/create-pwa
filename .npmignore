@@ -36,3 +36,5 @@ yarn.lock
 
 # Config files
 renovate.json
+_config.yml
+_.config.yml
