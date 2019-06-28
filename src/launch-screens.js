@@ -49,8 +49,6 @@ module.exports = function(image, folder) {
 	for (const size of launchScreenSizes) {
 		const [width, height] = size.split('x');
 
-		console.log(size);
-
 		sharp(image)
 			.resize(Number(width), Number(height))
 			.png()
