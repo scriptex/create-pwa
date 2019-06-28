@@ -19,6 +19,7 @@ Thumbs.db
 
 # Tests
 icons
+launch-screens
 manifest.json
 service-worker.js
 *.appcache
