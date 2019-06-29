@@ -3,7 +3,7 @@
 /**
  * Node dependencies
  */
-const { dirname, resolve, sep } = require('path');
+const { resolve, sep } = require('path');
 const { existsSync, writeFileSync, mkdirSync } = require('fs');
 
 /**
@@ -17,6 +17,7 @@ const argv = require('yargs').argv;
 const generateIcons = require('./icons');
 const manifestTemplate = require('./manifest');
 const appCacheTemplate = require('./appcache');
+const generateLaunchScreens = require('./launch-screens');
 const serviceWorkerTemplate = require('./sw');
 
 /**
@@ -39,6 +40,7 @@ const getAppName = () => {
 
 /**
  * Create app's manifest.json file
+ * @param {String} name
  */
 const setManifest = name => {
 	writeFileSync(resolve(pwd, 'manifest.json'), manifestTemplate(name));
@@ -46,56 +48,70 @@ const setManifest = name => {
 
 /**
  * Create app's service worker file
+ * @param {String} name
  */
 const setServiceWorker = name => {
-	writeFileSync(
-		resolve(pwd, 'service-worker.js'),
-		serviceWorkerTemplate(name)
-	);
+	writeFileSync(resolve(pwd, 'service-worker.js'), serviceWorkerTemplate(name));
 };
 
 /**
- * Create app's icons
+ * Create images with `sharp`
+ * @param {File} file
+ * @param {String} folder
+ * @param {Function} callback
  */
-const setIcons = icon => {
-	if (!icon) {
+const generateImages = (file, folder, callback) => {
+	if (!file) {
 		return;
 	}
 
-	const dir = resolve(pwd, 'icons');
-	const image = resolve(pwd, icon);
+	const dir = resolve(pwd, folder);
+	const image = resolve(pwd, file);
 
 	if (!existsSync(dir)) {
 		mkdirSync(dir);
 	}
 
-	generateIcons(image, dir);
+	callback(image, dir);
 };
+
+/**
+ * Create app's icons
+ * @param {File} icon
+ */
+const setIcons = icon => generateImages(icon, 'icons', generateIcons);
 
 /**
  * Create app's cache manifest
+ * @param {String} name
  */
 const setAppCache = name => {
-	writeFileSync(
-		resolve(pwd, `${name}.appcache`),
-		appCacheTemplate()
-	);
+	writeFileSync(resolve(pwd, `${name}.appcache`), appCacheTemplate());
 };
 
 /**
- * Create all PWA required files
+ * Create app's launch screens
+ * @param {File} launchScreen
  */
-const create = ({ icon }) => {
+const setLaunchScreens = launchScreen => generateImages(launchScreen, 'launch-screens', generateLaunchScreens);
+
+/**
+ * Create all PWA required files
+ * @param {Object} => { icon: File, launch: File}
+ */
+const create = ({ icon, launch }) => {
 	const name = getAppName();
 
 	setIcons(argv.icon || icon);
 	setAppCache(name);
 	setManifest(name);
 	setServiceWorker(name);
+	setLaunchScreens(argv.launch || launch);
 };
 
 create({
-	icon: './icon.png'
+	icon: './icon.png',
+	launch: './launch.png'
 });
 
 module.exports = create;
@@ -103,3 +119,4 @@ module.exports.setIcons = setIcons;
 module.exports.setAppCache = setAppCache;
 module.exports.setManifest = setManifest;
 module.exports.setServiceWorker = setServiceWorker;
+module.exports.setLaunchScreens = setLaunchScreens;

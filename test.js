@@ -9,26 +9,14 @@ const { existsSync, readdir } = require('fs');
  */
 const tape = require('tape');
 const createPWA = require('./src');
-
-/**
- * Sizes for all app icons
- */
-const iconSizes = [
-	'72x72',
-	'96x96',
-	'128x128',
-	'144x144',
-	'152x152',
-	'192x192',
-	'384x384',
-	'512x512'
-];
+const { iconSizes, launchScreenSizes } = require('./src/helpers');
 
 /**
  * Init
  */
 createPWA({
-	icon: './icon.png'
+	icon: './icon.png',
+	launch: './launch.png'
 });
 
 /**
@@ -46,11 +34,7 @@ tape('Should create a manifest', t => {
  * Test if the app name is correct
  */
 tape('The name of the app should be "create-pwa"', t => {
-	t.equal(
-		require(resolve(__dirname, './manifest.json')).name,
-		'create-pwa',
-		'The name of the PWA is "create-pwa"'
-	);
+	t.equal(require(resolve(__dirname, './manifest.json')).name, 'create-pwa', 'The name of the PWA is "create-pwa"');
 
 	t.end();
 });
@@ -80,9 +64,23 @@ tape('Should create an appcache file', t => {
 /**
  * Test if icons are being generated
  */
-tape('Should generate 8 icons', t => {
+tape('Should generate icons', t => {
 	readdir(resolve(__dirname, 'icons'), (err, files) => {
-		t.equal(iconSizes.length, files.length, 'There should be 8 icon files');
+		const len = iconSizes.length;
+		t.equal(len, files.length, `There should be ${len} icon files`);
+	});
+
+	t.end();
+});
+
+/**
+ * Test if launch screens are being created
+ */
+tape('Should generate launch screens', t => {
+	readdir(resolve(__dirname, 'launch-screens'), (err, files) => {
+		const len = Array.from(new Set(launchScreenSizes)).length;
+
+		t.equal(len, files.length, `There should be ${len} launch screen files`);
 	});
 
 	t.end();

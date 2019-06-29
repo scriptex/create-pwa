@@ -1,15 +1,27 @@
 /**
- * By default the home route is cached
+ * Internal dependencies
+ */
+const { iconFiles, launchScreenFiles } = require('./helpers');
+
+/**
+ * Convert a list of file to human readable list
+ * @param {File[]} files
+ */
+const filesToString = files => files.map(file => `'${file}'`).join(',\n\t');
+
+/**
+ * Cache all routes and files
  */
 const routes = `[
-	'/'
+	'/',
+	${filesToString(iconFiles)},
+	${filesToString(launchScreenFiles)},
 ]`;
 
 /**
  * Generate a service-worker.js file
  */
-module.exports = function(name) {
-	return `const CACHE_NAME = '${name}-cache';
+module.exports = name => `const CACHE_NAME = '${name}-cache';
 const urlsToCache = ${routes};
 
 self.addEventListener('install', event => {
@@ -66,4 +78,3 @@ self.addEventListener('activate', event => {
 	);
 });
 `;
-};
