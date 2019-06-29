@@ -8,7 +8,7 @@
 [![npm](https://img.shields.io/npm/v/create-pwa.svg)](https://www.npmjs.com/package/create-pwa)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/create-pwa/README.md)](https://github.com/scriptex/create-pwa/)
 
-# Create PWA (Create Progress Web Application)
+# Create PWA (Create Progressive Web Application)
 
 > Easily create a Progressive Web Application
 
@@ -36,17 +36,17 @@ yarn add create-pwa --dev
 
 ## Arguments
 
-1. `icon`: Specifies relative path to the application icon. **Should be a `.png` file.**
+1. `icon`: Specifies a relative path to the application icon. **Should be a `.png` file.**
 
-This path is relative to the folder you are located in. It is recommended that the icon file should be at least 512 pixels wide and 512 pixels high.
+This path is relative to the folder you are located in. It is recommended that the icon file is at least a 512x512 pixels square.
 
 **The `icon` argument is not required.**
 
 If the `icon` argument is not provided, the [default icon](https://github.com/scriptex/create-pwa/blob/master/icon.png) is used.
 
-1. `launch`: Specifies relative path to the application launch (splash) screen. **Should be a `.png` file.**
+2. `launch`: Specifies a relative path to the application launch (splash) screen. **Should be a `.png` file.**
 
-This path is relative to the folder you are located in. It is recommended that the launch file should be at least 3200 pixels wide and 3200 pixels high and the actual content (for example brand image) should be located in the middle of the image in a square with dimensions up to 500 pixels wide and 500 pixels high.
+This path is relative to the folder you are located in. It is recommended that the launch is at least 3200x3200 pixels square and the actual content (for example brand image) is located in the middle of the image in a square with dimensions up to 500x500 pixels.
 
 **The `launch` argument is not required.**
 
@@ -343,7 +343,9 @@ You can read more about Service Workers [here](https://developers.google.com/web
 4. (Optional) Add the following attribute to your `html` tag: `manifest="<YOUR_APP_NAME>.appcache"`. It should look something like this:
 
 ```html
-<html lang="en" manifest="create-pwa.appcache"></html>
+<html lang="en" manifest="create-pwa.appcache">
+	<!-- More awesome HTML code here -->
+</html>
 ```
 
 This will enable application cache and will cache all files listed in the `.appcache` file.
