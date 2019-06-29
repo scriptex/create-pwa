@@ -196,6 +196,76 @@ The entries listed in **Baseline Progressive Web App Checklist** are mandatory a
 
 If you wish to test your web app's compliance, you can use the Chrome's built-in Lighthouse tool (found under the _Audits_ tab in the Developer tools).
 
+## NodeJS API
+
+You can generate each of the components above separately using the Create PWA API in NodeJS:
+
+1. To create only an `appcache` file:
+
+```javascript
+const { setAppCache } = require('create-pwa');
+const appName = 'Your application name';
+
+setAppCache(appName);
+```
+
+**The generated `appcache` file contains references to the application icons and application launch screens. You must have these already generated otherwise you must edit your `appcache` file and remove them.**
+
+2. To create only the application icons:
+
+```javascript
+const { setIcons } = require('create-pwa');
+const appIcon = require('fs').resolve(__dirname, './your_icon.png');
+
+setIcons(appIcon);
+```
+
+3. To create only the launch screens:
+
+```javascript
+const { setLaunchScreens } = require('create-pwa');
+const launchScreen = require('fs').resolve(__dirname, './your_launch_screen.png');
+
+setLaunchScreens(launchScreen);
+```
+
+4. To create only manifest file:
+
+```javascript
+const { setManifest } = require('create-pwa');
+const appName = 'Your application name';
+
+setManifest(appName);
+```
+
+**The generated `manifest.json` file contains references to the application icons. You must have these already generated otherwise you must edit your `manifest.json` file and remove them.**
+
+5. To create only service worker file:
+
+```javascript
+const { setServiceWorker } = require('create-pwa');
+const appName = 'Your application name';
+
+setServiceWorker(appName);
+```
+
+**The generated `service-worker.js` file contains references to the application icons and application launch screens. You must have these already generated otherwise you must edit your `service-worker.js` file and remove them.**
+
+6. To create all files:
+
+```javascript
+const createPWA = require('create-pwa');
+const icon = require('fs').resolve(__dirname, './your_icon.png');
+const launch = require('fs').resolve(__dirname, './your_launch_screen.png');
+
+createPWA({
+	icon,
+	launch
+});
+```
+
+**This command assumes that you have a `package.json` file in the folder you run the command from and this `package.json` file contains a non-empty `name` member.**
+
 ## LICENSE
 
 MIT
