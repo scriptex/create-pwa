@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-const { iconFiles, launchScreenFiles } = require('./sizes');
+const { iconFiles, launchScreenFiles } = require('./helpers');
 
 module.exports = () => `CACHE MANIFEST
 

@@ -9,7 +9,7 @@ const { existsSync, readdir } = require('fs');
  */
 const tape = require('tape');
 const createPWA = require('./src');
-const { iconSizes, launchScreenSizes } = require('./src/sizes');
+const { iconSizes, launchScreenSizes } = require('./src/helpers');
 
 /**
  * Init

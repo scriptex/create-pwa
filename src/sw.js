@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-const { iconFiles, launchScreenFiles } = require('./sizes');
+const { iconFiles, launchScreenFiles } = require('./helpers');
 
 /**
  * Convert a list of file to human readable list

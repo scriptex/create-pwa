@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-const { iconSizes } = require('./sizes');
+const { iconSizes } = require('./helpers');
 
 const icons = iconSizes.map(size => ({
 	src: `icons/icon-${size}.png`,

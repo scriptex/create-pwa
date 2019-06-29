@@ -1,4 +1,9 @@
 /**
+ * External dependencies
+ */
+const sharp = require('sharp');
+
+/**
  * Sizes for all app icons
  */
 const iconSizes = ['72x72', '96x96', '128x128', '144x144', '152x152', '192x192', '384x384', '512x512'];
@@ -44,11 +49,23 @@ const launchScreenSizes = [
 
 const iconFiles = iconSizes.map(size => `icons/icon-${size}.png`);
 
-const launchScreenFiles = launchScreenSizes.map(size => `launchscreens/launch-screen-${size}.png`);
+const launchScreenFiles = launchScreenSizes.map(size => `launch-screens/launch-screen-${size}.png`);
+
+const generateFile = (file, folder, sizes) => {
+	for (const size of sizes) {
+		const [width, height] = size.split('x');
+
+		sharp(file)
+			.resize(Number(width), Number(height))
+			.png()
+			.toFile(`${folder}/icon-${size}.png`);
+	}
+};
 
 module.exports = {
 	iconSizes,
 	iconFiles,
+	generateFile,
 	launchScreenSizes,
 	launchScreenFiles
 };
