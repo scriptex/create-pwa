@@ -34,7 +34,7 @@ yarn add create-pwa --dev
 
 ## Arguments
 
-1. `icon`: Specifies relative path to the application icon.
+1. `icon`: Specifies relative path to the application icon. **Should be a `.png` file.**
 
 This path is relative to the folder you are located in. It is recommended that the icon file should be at least 512 pixels wide and 512 pixels high.
 
@@ -42,7 +42,7 @@ This path is relative to the folder you are located in. It is recommended that t
 
 If the `icon` argument is not provided, the [default icon](https://github.com/scriptex/create-pwa/blob/master/icon.png) is used.
 
-1. `launch`: Specifies relative path to the application launch (splash) screen
+1. `launch`: Specifies relative path to the application launch (splash) screen. **Should be a `.png` file.**
 
 This path is relative to the folder you are located in. It is recommended that the launch file should be at least 3200 pixels wide and 3200 pixels high and the actual content (for example brand image) should be located in the middle of the image in a square with dimensions up to 500 pixels wide and 500 pixels high.
 
