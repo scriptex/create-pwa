@@ -62,15 +62,16 @@ const launchScreenFiles = launchScreenSizes.map(size => `launch-screens/launch-s
  * @param {File} file
  * @param {String} folder
  * @param {String[]} sizes
+ * @param {String} prefix
  */
-const generateFile = (file, folder, sizes) => {
+const generateFile = (file, folder, sizes, prefix) => {
 	for (const size of sizes) {
 		const [width, height] = size.split('x');
 
 		sharp(file)
 			.resize(Number(width), Number(height))
 			.png()
-			.toFile(`${folder}/icon-${size}.png`);
+			.toFile(`${folder}/${prefix}-${size}.png`);
 	}
 };
 
