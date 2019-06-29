@@ -40,6 +40,7 @@ const getAppName = () => {
 
 /**
  * Create app's manifest.json file
+ * @param {String} name
  */
 const setManifest = name => {
 	writeFileSync(resolve(pwd, 'manifest.json'), manifestTemplate(name));
@@ -47,31 +48,42 @@ const setManifest = name => {
 
 /**
  * Create app's service worker file
+ * @param {String} name
  */
 const setServiceWorker = name => {
 	writeFileSync(resolve(pwd, 'service-worker.js'), serviceWorkerTemplate(name));
 };
 
 /**
- * Create app's icons
+ * Create images with `sharp`
+ * @param {File} file
+ * @param {String} folder
+ * @param {Function} callback
  */
-const setIcons = icon => {
-	if (!icon) {
+const generateImages = (file, folder, callback) => {
+	if (!file) {
 		return;
 	}
 
-	const dir = resolve(pwd, 'icons');
-	const image = resolve(pwd, icon);
+	const dir = resolve(pwd, folder);
+	const image = resolve(pwd, file);
 
 	if (!existsSync(dir)) {
 		mkdirSync(dir);
 	}
 
-	generateIcons(image, dir);
+	callback(image, dir);
 };
 
 /**
+ * Create app's icons
+ * @param {File} icon
+ */
+const setIcons = icon => generateImages(icon, 'icons', generateIcons);
+
+/**
  * Create app's cache manifest
+ * @param {String} name
  */
 const setAppCache = name => {
 	writeFileSync(resolve(pwd, `${name}.appcache`), appCacheTemplate());
@@ -79,24 +91,13 @@ const setAppCache = name => {
 
 /**
  * Create app's launch screens
+ * @param {File} launchScreen
  */
-const setLaunchScreens = launchScreen => {
-	if (!launchScreen) {
-		return;
-	}
-
-	const dir = resolve(pwd, 'launch-screens');
-	const image = resolve(pwd, launchScreen);
-
-	if (!existsSync(dir)) {
-		mkdirSync(dir);
-	}
-
-	generateLaunchScreens(image, dir);
-};
+const setLaunchScreens = launchScreen => generateImages(launchScreen, 'launch-screens', generateLaunchScreens);
 
 /**
  * Create all PWA required files
+ * @param {Object} => { icon: File, launch: File}
  */
 const create = ({ icon, launch }) => {
 	const name = getAppName();
