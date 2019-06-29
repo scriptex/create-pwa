@@ -35,6 +35,17 @@ yarn.lock
 .prettierignore
 
 # Config files
+.whitesource
 renovate.json
 _config.yml
 _.config.yml
+
+# Misc
+create-pwa.sketch
+
+# Tests
+icons
+launch-screens
+manifest.json
+service-worker.js
+*.appcache
