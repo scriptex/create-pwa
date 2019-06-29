@@ -25,10 +25,10 @@
 	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
 	"license": "MIT",
 	"dependencies": {
-		"sharp": "0.22.0",
-		"yargs": "13.0.0"
+		"sharp": "0.22.1",
+		"yargs": "13.2.4"
 	},
 	"devDependencies": {
-		"tape": "4.10.2"
+		"tape": "4.11.0"
 	}
 }
