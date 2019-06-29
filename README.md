@@ -40,11 +40,15 @@ This path is relative to the folder you are located in. It is recommended that t
 
 **The `icon` argument is not required.**
 
-2. `launch`: Specifies relative path to the application launch (splash) screen
+If the `icon` argument is not provided, the [default icon](https://github.com/scriptex/create-pwa/blob/master/icon.png) is used.
+
+1. `launch`: Specifies relative path to the application launch (splash) screen
 
 This path is relative to the folder you are located in. It is recommended that the launch file should be at least 3200 pixels wide and 3200 pixels high and the actual content (for example brand image) should be located in the middle of the image in a square with dimensions up to 500 pixels wide and 500 pixels high.
 
-**The `splash` argument is not required.**
+**The `launch` argument is not required.**
+
+If the `launch` argument is not provided, the [default launch screen](https://github.com/scriptex/create-pwa/blob/master/launch.png) is used.
 
 ## Usage
 
