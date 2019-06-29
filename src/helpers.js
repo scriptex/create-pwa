@@ -47,10 +47,22 @@ const launchScreenSizes = [
 	'1136x640' // iPhone SE Landscape
 ];
 
+/**
+ * Create files out of all icon sizes
+ */
 const iconFiles = iconSizes.map(size => `icons/icon-${size}.png`);
 
+/**
+ * Create files our of all launch screen sizes
+ */
 const launchScreenFiles = launchScreenSizes.map(size => `launch-screens/launch-screen-${size}.png`);
 
+/**
+ * Generate a png file with `sharp`
+ * @param {File} file
+ * @param {String} folder
+ * @param {String[]} sizes
+ */
 const generateFile = (file, folder, sizes) => {
 	for (const size of sizes) {
 		const [width, height] = size.split('x');
