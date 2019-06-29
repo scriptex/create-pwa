@@ -106,9 +106,10 @@ tape('Should create an appcache file', t => {
 /**
  * Test if icons are being generated
  */
-tape('Should generate 8 icons', t => {
+tape('Should generate icons', t => {
 	readdir(resolve(__dirname, 'icons'), (err, files) => {
-		t.equal(iconSizes.length, files.length, 'There should be 8 icon files');
+		const len = iconSizes.length;
+		t.equal(len, files.length, `There should be ${len} icon files`);
 	});
 
 	t.end();
@@ -117,9 +118,11 @@ tape('Should generate 8 icons', t => {
 /**
  * Test if launch screens are being created
  */
-tape('Should generate 32 launch screens', t => {
+tape('Should generate launch screens', t => {
 	readdir(resolve(__dirname, 'launch-screens'), (err, files) => {
-		t.equal(Array.from(new Set(launchScreenSizes)).length, files.length, 'There should be 32 launch screen files');
+		const len = Array.from(new Set(launchScreenSizes)).length;
+
+		t.equal(len, files.length, `There should be ${len} launch screen files`);
 	});
 
 	t.end();
