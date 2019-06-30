@@ -1,7 +1,6 @@
 /**
  * External dependencies
  */
-const sharp = require('sharp');
 const pngToIco = require('png-to-ico');
 const { writeFileSync } = require('fs');
 
