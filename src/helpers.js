@@ -63,11 +63,6 @@ const faviconSizes = ['16x16', '32x32', '96x96', '128x128', '196x196'];
 const msTileSizes = ['70x70', '144x144', '150x150', '310x150', '310x310'];
 
 /**
- * Sizes for the .ico file
- */
-const icoSizes = [16, 24, 32, 64];
-
-/**
  * Create files out of all icon sizes
  */
 const iconFiles = iconSizes.map(size => `icons/icon-${size}.png`);
@@ -111,7 +106,6 @@ const generateFile = (file, folder, sizes, prefix) => {
 };
 
 module.exports = {
-	icoSizes,
 	iconSizes,
 	iconFiles,
 	generateFile,
