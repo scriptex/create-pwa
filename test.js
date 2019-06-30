@@ -92,6 +92,8 @@ tape('Should generate favicons', t => {
 	readdir(resolve(__dirname, 'favicons'), (err, files) => {
 		const len = faviconSizes.length + msTileSizes.length + appleTouchIconSizes.length;
 
+		files = files.filter(file => !file.endsWith('ico'));
+
 		t.equal(len, files.length, `There should be ${len} favicon files.`);
 	});
 

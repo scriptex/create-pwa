@@ -3,7 +3,7 @@
  */
 const sharp = require('sharp');
 const createIco = require('to-ico');
-const { promises } = require('fs');
+const { writeFileSync } = require('fs');
 
 /**
  * Internal dependencies
@@ -16,7 +16,7 @@ const { generateFile, icoSizes, msTileSizes, faviconSizes, appleTouchIconSizes }
  * @param {String} dest
  */
 async function generateFavicon(source, dest) {
-	const resizedBuffers = await Promise.all(
+	const buffers = await Promise.all(
 		icoSizes.map(size =>
 			sharp(source)
 				.resize(size)
@@ -24,7 +24,7 @@ async function generateFavicon(source, dest) {
 		)
 	);
 
-	return promises.writeFile(dest, await createIco(resizedBuffers));
+	writeFileSync(dest, await createIco(buffers));
 }
 
 /**
