@@ -17,6 +17,8 @@ const argv = require('yargs').argv;
 const generateIcons = require('./icons');
 const manifestTemplate = require('./manifest');
 const appCacheTemplate = require('./appcache');
+const generateFavicons = require('./favicons');
+const msTileConfigTemplate = require('./mstile');
 const generateLaunchScreens = require('./launch-screens');
 const serviceWorkerTemplate = require('./sw');
 
@@ -96,6 +98,19 @@ const setAppCache = name => {
 const setLaunchScreens = launchScreen => generateImages(launchScreen, 'launch-screens', generateLaunchScreens);
 
 /**
+ * Create app's config for Microsoft browsers
+ */
+const setMsTileConfig = () => {
+	writeFileSync(resolve(pwd, 'config.xml'), msTileConfigTemplate());
+};
+
+/**
+ * Create app's favicons
+ * @param {File} icon
+ */
+const setFavicons = icon => generateImages(icon, 'favicons', generateFavicons);
+
+/**
  * Create all PWA required files
  * @param {Object} => { icon: File, launch: File}
  */
@@ -105,6 +120,8 @@ const create = ({ icon, launch }) => {
 	setIcons(argv.icon || icon);
 	setAppCache(name);
 	setManifest(name);
+	setFavicons(argv.icon || icon);
+	setMsTileConfig();
 	setServiceWorker(name);
 	setLaunchScreens(argv.launch || launch);
 };
@@ -118,5 +135,7 @@ module.exports = create;
 module.exports.setIcons = setIcons;
 module.exports.setAppCache = setAppCache;
 module.exports.setManifest = setManifest;
+module.exports.setFavicons = setFavicons;
+module.exports.setMsTileConfig = setMsTileConfig;
 module.exports.setServiceWorker = setServiceWorker;
 module.exports.setLaunchScreens = setLaunchScreens;

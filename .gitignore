@@ -19,7 +19,9 @@ Thumbs.db
 
 # Tests
 icons
+favicons
 launch-screens
+config.xml
 manifest.json
 service-worker.js
 *.appcache
