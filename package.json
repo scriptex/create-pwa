@@ -14,7 +14,8 @@
 		"progressive web app",
 		"manifest",
 		"web app",
-		"service-worker"
+		"service worker",
+		"favicon generator"
 	],
 	"main": "src/index.js",
 	"repository": "git@github.com:scriptex/create-pwa.git",
