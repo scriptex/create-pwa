@@ -28,6 +28,14 @@ const serviceWorkerTemplate = require('./sw');
 const pwd = process.env.PWD;
 
 /**
+ * Default options
+ */
+const DEFAULTS = {
+	icon: './icon.png',
+	launch: './launch.png'
+};
+
+/**
  * Get application's name
  */
 const getAppName = () => {
@@ -114,22 +122,22 @@ const setFavicons = icon => generateImages(icon, 'favicons', generateFavicons);
  * Create all PWA required files
  * @param {Object} => { icon: File, launch: File}
  */
-const create = ({ icon, launch }) => {
+const create = (options = DEFAULTS) => {
 	const name = getAppName();
 
-	setIcons(argv.icon || icon);
+	let { icon, launch } = options;
+
+	icon = argv.icon || icon;
+	launch = argv.launch || launch;
+
+	setIcons(icon);
 	setAppCache(name);
 	setManifest(name);
-	setFavicons(argv.icon || icon);
+	setFavicons(icon);
 	setMsTileConfig();
 	setServiceWorker(name);
-	setLaunchScreens(argv.launch || launch);
+	setLaunchScreens(launch);
 };
-
-create({
-	icon: './icon.png',
-	launch: './launch.png'
-});
 
 module.exports = create;
 module.exports.setIcons = setIcons;

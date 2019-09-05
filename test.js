@@ -14,10 +14,7 @@ const { iconSizes, faviconSizes, msTileSizes, launchScreenSizes, appleTouchIconS
 /**
  * Init
  */
-createPWA({
-	icon: './icon.png',
-	launch: './launch.png'
-});
+createPWA();
 
 /**
  * Test if a manifest is created
