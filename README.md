@@ -89,6 +89,8 @@ In order to create a customized experience for your users, feel advised to revis
 
 When the files(`manifest.json` and `service-worker.js`) are ready for production, you need to let the world know about them:
 
+Feel adviced to edit the content of the `<TileColor>` tag in the `config.xml` file as it matches the color of your application's status bar on Chrome (found in the `<meta name="color" />` tag);
+
 1.  Add the following to the `head` of your HTML file(s):
 
 ```html
@@ -163,7 +165,7 @@ For more info about the favicons and meta tags below see [here](https://github.c
 <meta name="msapplication-config" content="config.xml" />
 ```
 
-4. Add the following launch screens in the `head` of your HTML file(s):
+4. (Optional) Add the following launch screens in the `head` of your HTML file(s):
 
 ```html
 <!-- 12.9" iPad Pro Portrait -->
