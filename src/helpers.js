@@ -48,6 +48,21 @@ const launchScreenSizes = [
 ];
 
 /**
+ * Sizes for all apple touch icons
+ */
+const appleTouchIconSizes = ['57x57', '60x60', '72x72', '76x76', '114x114', '120x120', '144x144', '152x152'];
+
+/**
+ * Sizes for all favicons
+ */
+const faviconSizes = ['16x16', '32x32', '96x96', '128x128', '196x196'];
+
+/**
+ * Sizes for all microsoft windows tiles
+ */
+const msTileSizes = ['70x70', '144x144', '150x150', '310x150', '310x310'];
+
+/**
  * Create files out of all icon sizes
  */
 const iconFiles = iconSizes.map(size => `icons/icon-${size}.png`);
@@ -56,6 +71,21 @@ const iconFiles = iconSizes.map(size => `icons/icon-${size}.png`);
  * Create files our of all launch screen sizes
  */
 const launchScreenFiles = launchScreenSizes.map(size => `launch-screens/launch-screen-${size}.png`);
+
+/**
+ * Create files our of all apple touch icon sizes
+ */
+const appleTouchIconFiles = appleTouchIconSizes.map(size => `favicons/apple-touch-icon-${size}.png`);
+
+/**
+ * Create files our of all favicon sizes
+ */
+const faviconFiles = faviconSizes.map(size => `favicons/favicon-${size}.png`);
+
+/**
+ * Create files our of all microsoft windows tile sizes
+ */
+const msTileFiles = msTileSizes.map(size => `favicons/mstile-${size}.png`);
 
 /**
  * Generate a png file with `sharp`
@@ -80,5 +110,11 @@ module.exports = {
 	iconFiles,
 	generateFile,
 	launchScreenSizes,
-	launchScreenFiles
+	launchScreenFiles,
+	appleTouchIconSizes,
+	appleTouchIconFiles,
+	faviconSizes,
+	faviconFiles,
+	msTileSizes,
+	msTileFiles
 };

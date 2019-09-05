@@ -1,6 +1,6 @@
 {
 	"name": "create-pwa",
-	"version": "2.0.1",
+	"version": "2.1.0",
 	"description": "Easily create a progressive web app",
 	"scripts": {
 		"test": "tape test.js"
@@ -14,7 +14,8 @@
 		"progressive web app",
 		"manifest",
 		"web app",
-		"service-worker"
+		"service worker",
+		"favicon generator"
 	],
 	"main": "src/index.js",
 	"repository": "git@github.com:scriptex/create-pwa.git",
@@ -25,6 +26,7 @@
 	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
 	"license": "MIT",
 	"dependencies": {
+		"png-to-ico": "2.0.4",
 		"sharp": "0.23.0",
 		"yargs": "14.0.0"
 	},

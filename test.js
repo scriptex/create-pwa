@@ -9,15 +9,12 @@ const { existsSync, readdir } = require('fs');
  */
 const tape = require('tape');
 const createPWA = require('./src');
-const { iconSizes, launchScreenSizes } = require('./src/helpers');
+const { iconSizes, faviconSizes, msTileSizes, launchScreenSizes, appleTouchIconSizes } = require('./src/helpers');
 
 /**
  * Init
  */
-createPWA({
-	icon: './icon.png',
-	launch: './launch.png'
-});
+createPWA();
 
 /**
  * Test if a manifest is created
@@ -35,7 +32,6 @@ tape('Should create a manifest', t => {
  */
 tape('The name of the app should be "create-pwa"', t => {
 	t.equal(require(resolve(__dirname, './manifest.json')).name, 'create-pwa', 'The name of the PWA is "create-pwa"');
-
 	t.end();
 });
 
@@ -83,5 +79,31 @@ tape('Should generate launch screens', t => {
 		t.equal(len, files.length, `There should be ${len} launch screen files`);
 	});
 
+	t.end();
+});
+
+/**
+ * Test if favicons are being created
+ */
+tape('Should generate favicons', t => {
+	readdir(resolve(__dirname, 'favicons'), (err, files) => {
+		const len = faviconSizes.length + msTileSizes.length + appleTouchIconSizes.length;
+
+		files = files.filter(file => !file.endsWith('ico'));
+
+		t.equal(len, files.length, `There should be ${len} favicon files.`);
+	});
+
+	t.end();
+});
+
+/**
+ * Test if config.xml is being created
+ */
+tape('Should generate a config file for Microsoft browsers', t => {
+	const ac = resolve(__dirname, './config.xml');
+	const configFileExists = existsSync(ac);
+
+	t.ok(configFileExists, 'config.xml exists');
 	t.end();
 });

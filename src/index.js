@@ -17,6 +17,8 @@ const argv = require('yargs').argv;
 const generateIcons = require('./icons');
 const manifestTemplate = require('./manifest');
 const appCacheTemplate = require('./appcache');
+const generateFavicons = require('./favicons');
+const msTileConfigTemplate = require('./mstile');
 const generateLaunchScreens = require('./launch-screens');
 const serviceWorkerTemplate = require('./sw');
 
@@ -24,6 +26,14 @@ const serviceWorkerTemplate = require('./sw');
  * Get caller's folder
  */
 const pwd = process.env.PWD;
+
+/**
+ * Default options
+ */
+const DEFAULTS = {
+	icon: './icon.png',
+	launch: './launch.png'
+};
 
 /**
  * Get application's name
@@ -96,27 +106,44 @@ const setAppCache = name => {
 const setLaunchScreens = launchScreen => generateImages(launchScreen, 'launch-screens', generateLaunchScreens);
 
 /**
+ * Create app's config for Microsoft browsers
+ */
+const setMsTileConfig = () => {
+	writeFileSync(resolve(pwd, 'config.xml'), msTileConfigTemplate());
+};
+
+/**
+ * Create app's favicons
+ * @param {File} icon
+ */
+const setFavicons = icon => generateImages(icon, 'favicons', generateFavicons);
+
+/**
  * Create all PWA required files
  * @param {Object} => { icon: File, launch: File}
  */
-const create = ({ icon, launch }) => {
+const create = (options = DEFAULTS) => {
 	const name = getAppName();
 
-	setIcons(argv.icon || icon);
+	let { icon, launch } = options;
+
+	icon = argv.icon || icon;
+	launch = argv.launch || launch;
+
+	setIcons(icon);
 	setAppCache(name);
 	setManifest(name);
+	setFavicons(icon);
+	setMsTileConfig();
 	setServiceWorker(name);
-	setLaunchScreens(argv.launch || launch);
+	setLaunchScreens(launch);
 };
-
-create({
-	icon: './icon.png',
-	launch: './launch.png'
-});
 
 module.exports = create;
 module.exports.setIcons = setIcons;
 module.exports.setAppCache = setAppCache;
 module.exports.setManifest = setManifest;
+module.exports.setFavicons = setFavicons;
+module.exports.setMsTileConfig = setMsTileConfig;
 module.exports.setServiceWorker = setServiceWorker;
 module.exports.setLaunchScreens = setLaunchScreens;

@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-const { iconFiles, launchScreenFiles } = require('./helpers');
+const { iconFiles, launchScreenFiles, appleTouchIconFiles, faviconFiles, msTileFiles } = require('./helpers');
 
 /**
  * Convert a list of file to human readable list
@@ -16,6 +16,10 @@ const routes = `[
 	'/',
 	${filesToString(iconFiles)},
 	${filesToString(launchScreenFiles)},
+	${filesToString(appleTouchIconFiles)},
+	${filesToString(faviconFiles)},
+	${filesToString(msTileFiles)},
+	'favicons/favicon.ico'
 ]`;
 
 /**
