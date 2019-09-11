@@ -440,6 +440,8 @@ const appIcon = require('fs').resolve(__dirname, './your_icon.png');
 setIcons(appIcon);
 ```
 
+**The generated icons are located in the `/icons` folder.**
+
 3. To create only the launch screens:
 
 ```javascript
@@ -448,6 +450,8 @@ const launchScreen = require('fs').resolve(__dirname, './your_launch_screen.png'
 
 setLaunchScreens(launchScreen);
 ```
+
+**The generated files are located in the `/launch-screens` folder.**
 
 4. To create only manifest file:
 
@@ -460,7 +464,18 @@ setManifest(appName);
 
 **The generated `manifest.json` file contains references to the application icons. You must have these already generated otherwise you must edit your `manifest.json` file and remove them.**
 
-5. To create only service worker file:
+5. To create only favicon files:
+
+```javascript
+const { setFavicons } = require('create-pwa');
+const appIcon = require('fs').resolve(__dirname, './your_icon.png');
+
+setFavicons(appIcon);
+```
+
+**The generated files are located in the `/favicons` folder.**
+
+6. To create only service worker file:
 
 ```javascript
 const { setServiceWorker } = require('create-pwa');
@@ -470,21 +485,6 @@ setServiceWorker(appName);
 ```
 
 **The generated `service-worker.js` file contains references to the application icons and application launch screens. You must have these already generated otherwise you must edit your `service-worker.js` file and remove them.**
-
-6. To create all files:
-
-```javascript
-const createPWA = require('create-pwa');
-const icon = require('fs').resolve(__dirname, './your_icon.png');
-const launch = require('fs').resolve(__dirname, './your_launch_screen.png');
-
-createPWA({
-	icon,
-	launch
-});
-```
-
-**This command assumes that you have a `package.json` file in the folder you run the command from and this `package.json` file contains a non-empty `name` member.**
 
 ## LICENSE
 
