@@ -7,9 +7,50 @@ const { resolve, sep } = require('path');
 const { existsSync, writeFileSync, mkdirSync } = require('fs');
 
 /**
+ * Default options
+ */
+const DEFAULTS = {
+	icon: './icon.png',
+	launch: './launch.png'
+};
+
+/**
  * External dependencies
  */
-const argv = require('yargs').argv;
+const argv = require('yargs').options({
+	icon: {
+		default: DEFAULTS.icon,
+		type: 'string'
+	},
+	launch: {
+		default: DEFAULTS.launch,
+		type: 'string'
+	},
+	icons: {
+		default: true,
+		type: 'boolean'
+	},
+	manifest: {
+		default: true,
+		type: 'boolean'
+	},
+	appCache: {
+		default: true,
+		type: 'boolean'
+	},
+	favicons: {
+		default: true,
+		type: 'boolean'
+	},
+	serviceWorker: {
+		default: true,
+		type: 'boolean'
+	},
+	launchScreens: {
+		default: true,
+		type: 'boolean'
+	}
+}).argv;
 
 /**
  * Internal dependencies
@@ -26,14 +67,6 @@ const serviceWorkerTemplate = require('./sw');
  * Get caller's folder
  */
 const pwd = process.env.PWD;
-
-/**
- * Default options
- */
-const DEFAULTS = {
-	icon: './icon.png',
-	launch: './launch.png'
-};
 
 /**
  * Get application's name
@@ -122,22 +155,40 @@ const setFavicons = icon => generateImages(icon, 'favicons', generateFavicons);
  * Create all PWA required files
  * @param {Object} => { icon: File, launch: File}
  */
-const create = (options = DEFAULTS) => {
+const create = () => {
 	const name = getAppName();
 
-	let { icon, launch } = options;
+	const { icon, launch, icons, manifest, favicons, appCache, serviceWorker, launchScreens } = argv;
+	const iconToUse = icon || DEFAULTS.icon;
+	const launchToUse = launch || DEFAULTS.launch;
 
-	icon = argv.icon || icon;
-	launch = argv.launch || launch;
+	if (icons) {
+		setIcons(iconToUse);
+	}
 
-	setIcons(icon);
-	setAppCache(name);
-	setManifest(name);
-	setFavicons(icon);
-	setMsTileConfig();
-	setServiceWorker(name);
-	setLaunchScreens(launch);
+	if (manifest) {
+		setManifest(name);
+	}
+
+	if (appCache) {
+		setAppCache(name);
+	}
+
+	if (favicons) {
+		setFavicons(iconToUse);
+		setMsTileConfig();
+	}
+
+	if (serviceWorker) {
+		setServiceWorker(name);
+	}
+
+	if (launchScreens) {
+		setLaunchScreens(launchToUse);
+	}
 };
+
+create();
 
 module.exports = create;
 module.exports.setIcons = setIcons;

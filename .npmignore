@@ -45,8 +45,10 @@ _.config.yml
 create-pwa.sketch
 
 # Tests
+favicons
 icons
 launch-screens
+config.xml
+*.appcache
 manifest.json
 service-worker.js
-*.appcache
