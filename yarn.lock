@@ -934,10 +934,10 @@ pixelmatch@^4.0.2:
   dependencies:
     pngjs "^3.0.0"
 
-png-to-ico@2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/png-to-ico/-/png-to-ico-2.0.5.tgz#efa749cfd11ed98d762dcd0ba4f340b40b0d7034"
-  integrity sha512-deLVzLXSqpyogh3iK08IIZcKZ/gyB315Klx0chZVee2FL6D0Grx9IkBElDjk/LYAH36NjdeqJgLC6BOqEsYxuw==
+png-to-ico@2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/png-to-ico/-/png-to-ico-2.0.6.tgz#7ae496b8fb9a9f6ab7cd32411c49a6c0e311631f"
+  integrity sha512-gS7M2ChGQNNdNYkniaAWuoSYCTi5XkxRF2rtkKQ4kI/n8nYSgMCYWVIkiyfLXteEtvBt9I/bwMAzfSdx91cADQ==
   dependencies:
     "@types/node" "^12.7.5"
     jimp "^0.8.2"
