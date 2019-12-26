@@ -32,6 +32,6 @@
 		"yargs": "15.0.2"
 	},
 	"devDependencies": {
-		"tape": "4.12.0"
+		"tape": "4.12.1"
 	}
 }
