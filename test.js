@@ -64,9 +64,8 @@ tape('Should generate icons', t => {
 	readdir(resolve(__dirname, 'icons'), (err, files) => {
 		const len = iconSizes.length;
 		t.equal(len, files.length, `There should be ${len} icon files`);
+		t.end();
 	});
-
-	t.end();
 });
 
 /**
@@ -77,9 +76,8 @@ tape('Should generate launch screens', t => {
 		const len = Array.from(new Set(launchScreenSizes)).length;
 
 		t.equal(len, files.length, `There should be ${len} launch screen files`);
+		t.end();
 	});
-
-	t.end();
 });
 
 /**
@@ -92,9 +90,8 @@ tape('Should generate favicons', t => {
 		files = files.filter(file => !file.endsWith('ico'));
 
 		t.equal(len, files.length, `There should be ${len} favicon files.`);
+		t.end();
 	});
-
-	t.end();
 });
 
 /**
