@@ -24,6 +24,7 @@
 
 In order to use this module, you must have NodeJS installed and NPM or Yarn available.
 
+**You also need a bash shell installed and configured - default on OSX and linux or [Git bash](https://git-scm.com/downloads) on Windows.**
 ## Install
 
 ```sh
