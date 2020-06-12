@@ -143,7 +143,7 @@ For more info about the favicons and meta tags below see [here](https://github.c
 <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16" />
-<link rel="icon" type="image/png" href="favicons/favicon-128.png" sizes="128x128" />
+<link rel="icon" type="image/png" href="favicons/favicon-128x128.png" sizes="128x128" />
 
 <!-- A favicon with four different sizes -->
 <link rel="shortcut icon" type="image/x-icon" href="favicons/favicon.ico" />
@@ -156,11 +156,11 @@ For more info about the favicons and meta tags below see [here](https://github.c
 <meta name="application-name" content="Create PWA" />
 
 <!-- Application icons for Microsoft Windows app tile -->
-<meta name="msapplication-TileImage" content="favicons/mstile-144x144.png" />
-<meta name="msapplication-square70x70logo" content="favicons/mstile-70x70.png" />
-<meta name="msapplication-square150x150logo" content="favicons/mstile-150x150.png" />
-<meta name="msapplication-wide310x150logo" content="favicons/mstile-310x150.png" />
-<meta name="msapplication-square310x310logo" content="favicons/mstile-310x310.png" />
+<meta name="msapplication-TileImage" content="favicons/ms-tile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="favicons/ms-tile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="favicons/ms-tile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="favicons/ms-tile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="favicons/ms-tile-310x310.png" />
 
 <!-- Application config file for Microsoft browsers -->
 <meta name="msapplication-config" content="config.xml" />
