@@ -25,6 +25,7 @@
 In order to use this module, you must have NodeJS installed and NPM or Yarn available.
 
 **You also need a bash shell installed and configured - default on OSX and linux or [Git bash](https://git-scm.com/downloads) on Windows.**
+
 ## Install
 
 ```sh
@@ -55,7 +56,17 @@ If the `launch` argument is not provided, the [default launch screen](https://gi
 
 ## Usage
 
-First, navigate to your application's folder:
+If you want to use if from the command line, you should first install Create PWA globally:
+
+```sh
+npm i -g create-pwa
+
+# or
+
+yarn global add create-pwa
+```
+
+Then, navigate to your application's folder:
 Then run the install command (see above)
 
 ```sh
@@ -64,7 +75,7 @@ cd your/app/folder
 create-pwa --icon="./icon.png" --launch="./launch.png"
 ```
 
-You can also use `create-pwa` as a package.json script:
+You can also use `create-pwa` as a package.json script (in this case you don't need to install the package globally):
 
 ```json
 {
@@ -76,11 +87,11 @@ You can also use `create-pwa` as a package.json script:
 
 The above commands will generate:
 
-- a `manifest.json` and a `service-worker.js` files
-- several (8) png icons in the `/icons/` folder in your app's root folder
-- several (19) favicons in the `/favicons` folder in your app's root folder
-- several (20) launch screen images in the `launch-screen` folder in your app's root folder
-- a `config.xml` file in your app's root folder - this file is required in Microsoft's browsers
+-   a `manifest.json` and a `service-worker.js` files
+-   several (8) png icons in the `/icons/` folder in your app's root folder
+-   several (19) favicons in the `/favicons` folder in your app's root folder
+-   several (20) launch screen images in the `launch-screen` folder in your app's root folder
+-   a `config.xml` file in your app's root folder - this file is required in Microsoft's browsers
 
 You can edit the contents of the `manifest.json` and `service-worker.js` files.
 
@@ -393,6 +404,17 @@ For more info about the favicons and meta tags below see [here](https://github.c
 	media="(device-width: 1136px) and (device-height: 640px) and (orientation: landscape)"
 />
 ```
+
+In order to have the launch screens shown on an iOS device you also need to tell the device it is dealing with a web app:
+
+```html
+<meta name="apple-mobile-web-app-capable" content="yes" /> <meta name="mobile-web-app-capable" content="yes" />
+```
+
+The formet works on **Safari** on all iOS devices.
+The latter works on **Google Chrome** on all iOS devices.
+
+**Android devices** show splash screen based on the data provided in the `manifest.json` file: `icons`, `name`, etc.
 
 5. (Optional) Add the following attribute to your `html` tag: `manifest="<YOUR_APP_NAME>.appcache"`. It should look something like this:
 
