@@ -85,7 +85,7 @@ const faviconFiles = faviconSizes.map(size => `favicons/favicon-${size}.png`);
 /**
  * Create files our of all microsoft windows tile sizes
  */
-const msTileFiles = msTileSizes.map(size => `favicons/mstile-${size}.png`);
+const msTileFiles = msTileSizes.map(size => `favicons/ms-tile-${size}.png`);
 
 /**
  * Generate a png file with `sharp`
@@ -98,10 +98,7 @@ const generateFile = (file, folder, sizes, prefix) => {
 	for (const size of sizes) {
 		const [width, height] = size.split('x');
 
-		sharp(file)
-			.resize(Number(width), Number(height))
-			.png()
-			.toFile(`${folder}/${prefix}-${size}.png`);
+		sharp(file).resize(Number(width), Number(height)).png().toFile(`${folder}/${prefix}-${size}.png`);
 	}
 };
 
