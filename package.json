@@ -28,7 +28,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"png-to-ico": "2.1.0",
-		"sharp": "0.26.0",
+		"sharp": "0.26.1",
 		"yargs": "16.0.3"
 	},
 	"devDependencies": {
