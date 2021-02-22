@@ -304,10 +304,10 @@
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
 
-"@types/node@^14.11.2":
-  version "14.11.8"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.8.tgz#fe2012f2355e4ce08bca44aeb3abbb21cf88d33f"
-  integrity sha512-KPcKqKm5UKDkaYPTuXSx8wEP7vE9GnuaXIZKijwRYcePpZFDVuy2a57LarFKiORbHOuTOOwYzxVxcUzsh2P2Pw==
+"@types/node@^14.14.17":
+  version "14.14.31"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
+  integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -1170,12 +1170,12 @@ pixelmatch@^4.0.2:
   dependencies:
     pngjs "^3.0.0"
 
-png-to-ico@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/png-to-ico/-/png-to-ico-2.1.1.tgz#35be46f93c1ac8d77025f6f4b60c1fa567c1d47c"
-  integrity sha512-18pLjRG0lJkYPXeRaPDp0xQGwWrbATYUQh8Drffq9vRdN5Ue4nKvbe5ltU0Ot3WgONk/goHOcH0QfvneJUipiA==
+png-to-ico@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/png-to-ico/-/png-to-ico-2.1.2.tgz#9787178b849f1a7b3aa3e5f2d57ac4cbfabc7c24"
+  integrity sha512-R8kcM9NTBRGMMIFCn6Dg9aUwIRHj2uDdfa5y1XVpTOeukyqzgVWXy0YZ9S7rNw9/Fwt8CXQ/OJYY3wQGyHwNPg==
   dependencies:
-    "@types/node" "^14.11.2"
+    "@types/node" "^14.14.17"
     jimp "^0.16.1"
     minimist "^1.2.5"
 
