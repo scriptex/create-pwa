@@ -997,7 +997,7 @@ min-document@^2.19.0:
   dependencies:
     dom-walk "^0.1.0"
 
-minimatch@=3.0.4, minimatch@^3.0.4:
+minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   integrity sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
@@ -1421,10 +1421,10 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
-tape@5.5.1:
-  version "5.5.1"
-  resolved "https://registry.yarnpkg.com/tape/-/tape-5.5.1.tgz#e61519a400bf778c9dc2e3b2fa699dc14ce14ae5"
-  integrity sha512-cO+URxa9CWe2mfgeccQRfKcDyNJ2EqoL+bpHLonEvMKilzkNz16IJ1WDMoI665/7RJvCofBk+pG5/wUbcKAMDQ==
+tape@5.5.2:
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/tape/-/tape-5.5.2.tgz#3750c415e6ddfbcd425945f02f1a907d2ea8171f"
+  integrity sha512-N9Ss672dFE3QlppiXGh2ieux8Ophau/HSAQguW5cXQworKxV0QvnZCYI35W1OYySTJk0OC9OPuS+0xNO6lhiTQ==
   dependencies:
     array.prototype.every "^1.1.3"
     call-bind "^1.0.2"
@@ -1438,7 +1438,6 @@ tape@5.5.1:
     has-dynamic-import "^2.0.1"
     inherits "^2.0.4"
     is-regex "^1.1.4"
-    minimatch "=3.0.4"
     minimist "^1.2.5"
     object-inspect "^1.12.0"
     object-is "^1.1.5"
