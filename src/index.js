@@ -66,7 +66,7 @@ const serviceWorkerTemplate = require('./sw');
 /**
  * Get caller's folder
  */
-const pwd = process.env.PWD;
+const pwd = process.cwd();
 
 /**
  * Get application's name
