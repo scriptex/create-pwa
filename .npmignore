@@ -50,5 +50,8 @@ icons
 launch-screens
 config.xml
 *.appcache
+create-pwa.svg
+icon.png
+launch.png
 manifest.json
 service-worker.js

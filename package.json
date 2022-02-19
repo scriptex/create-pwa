@@ -1,6 +1,6 @@
 {
 	"name": "create-pwa",
-	"version": "2.3.1",
+	"version": "2.4.0",
 	"description": "Easily create a progressive web app",
 	"scripts": {
 		"pwa": "src/index.js --icon=\"./icon.png\" --launch=\"./launch.png\" --icons=false --app-cache=false --manifest=false --favicons=false --service-worker=false --launch-screens=false",
