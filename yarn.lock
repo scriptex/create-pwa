@@ -299,10 +299,10 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
-"@types/node@^14.14.17":
-  version "14.18.12"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.12.tgz#0d4557fd3b94497d793efd4e7d92df2f83b4ef24"
-  integrity sha512-q4jlIR71hUpWTnGhXWcakgkZeHa3CCjcQcnuzU8M891BAWA2jHiziiWEPEkdS5pFsz7H9HJiy8BrK7tBRNrY7A==
+"@types/node@^17.0.12":
+  version "17.0.21"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
+  integrity sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -1151,12 +1151,12 @@ pixelmatch@^4.0.2:
   dependencies:
     pngjs "^3.0.0"
 
-png-to-ico@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/png-to-ico/-/png-to-ico-2.1.2.tgz#9787178b849f1a7b3aa3e5f2d57ac4cbfabc7c24"
-  integrity sha512-R8kcM9NTBRGMMIFCn6Dg9aUwIRHj2uDdfa5y1XVpTOeukyqzgVWXy0YZ9S7rNw9/Fwt8CXQ/OJYY3wQGyHwNPg==
+png-to-ico@2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/png-to-ico/-/png-to-ico-2.1.3.tgz#98833adad21a103029864a3353e8baf3b8966497"
+  integrity sha512-JwxwSimcguJgwXeP/fsSejR/rdicHDtuttmbOtDcrGqsOYYYAvpYRytsk2YcVGYzdYTIaz7Rvyi3kFqYeMpfSA==
   dependencies:
-    "@types/node" "^14.14.17"
+    "@types/node" "^17.0.12"
     jimp "^0.16.1"
     minimist "^1.2.5"
 
