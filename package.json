@@ -27,7 +27,7 @@
 	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
 	"license": "MIT",
 	"dependencies": {
-		"png-to-ico": "2.1.3",
+		"png-to-ico": "2.1.4",
 		"sharp": "0.30.3",
 		"yargs": "17.4.0"
 	},

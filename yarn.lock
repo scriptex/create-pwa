@@ -1012,6 +1012,11 @@ minimist@^1.2.0, minimist@^1.2.3, minimist@^1.2.5:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
+minimist@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
+
 mkdirp-classic@^0.5.2, mkdirp-classic@^0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/mkdirp-classic/-/mkdirp-classic-0.5.3.tgz#fa10c9115cc6d8865be221ba47ee9bed78601113"
@@ -1151,14 +1156,14 @@ pixelmatch@^4.0.2:
   dependencies:
     pngjs "^3.0.0"
 
-png-to-ico@2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/png-to-ico/-/png-to-ico-2.1.3.tgz#98833adad21a103029864a3353e8baf3b8966497"
-  integrity sha512-JwxwSimcguJgwXeP/fsSejR/rdicHDtuttmbOtDcrGqsOYYYAvpYRytsk2YcVGYzdYTIaz7Rvyi3kFqYeMpfSA==
+png-to-ico@2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/png-to-ico/-/png-to-ico-2.1.4.tgz#0f14674c79e23bbd4367696b5852693edf28dbee"
+  integrity sha512-LvIYVlJTrdBfPx4Nz30m5vJk4Yw3yUwMf88TY0fcqj23pDe8tTqNpSuUoPF58ptgACL5CSRCa6FscatQWF3n0Q==
   dependencies:
     "@types/node" "^17.0.12"
     jimp "^0.16.1"
-    minimist "^1.2.5"
+    minimist "^1.2.6"
 
 pngjs@^3.0.0, pngjs@^3.3.3:
   version "3.4.0"
