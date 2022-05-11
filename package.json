@@ -29,7 +29,7 @@
 	"dependencies": {
 		"png-to-ico": "2.1.4",
 		"sharp": "0.30.4",
-		"yargs": "17.4.1"
+		"yargs": "17.5.0"
 	},
 	"devDependencies": {
 		"tape": "5.5.3"
