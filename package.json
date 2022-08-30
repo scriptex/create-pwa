@@ -1,6 +1,6 @@
 {
 	"name": "create-pwa",
-	"version": "2.4.1",
+	"version": "2.5.0",
 	"description": "Easily create a progressive web app",
 	"scripts": {
 		"pwa": "src/index.js --icon=\"./icon.png\" --launch=\"./launch.png\" --icons=false --app-cache=false --manifest=false --favicons=false --service-worker=false --launch-screens=false",
@@ -27,7 +27,7 @@
 	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
 	"license": "MIT",
 	"dependencies": {
-		"png-to-ico": "2.1.6",
+		"png-to-ico": "2.1.7",
 		"sharp": "0.30.7",
 		"yargs": "17.5.1"
 	},

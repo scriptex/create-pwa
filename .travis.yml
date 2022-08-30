@@ -3,6 +3,6 @@ sudo: false
 node_js:
     - 'lts/*'
 install:
-    - npm install
+    - yarn
 script:
-    - npm test
+    - yarn test
