@@ -1,31 +1,35 @@
 {
 	"name": "create-pwa",
-	"version": "2.5.0",
+	"version": "2.6.0",
 	"description": "Easily create a progressive web app",
+	"keywords": [
+		"PWA",
+		"CLI",
+		"Web App",
+		"Manifest",
+		"Webmanifest",
+		"PWA Generator",
+		"Service Worker",
+		"Favicon Generator",
+		"Progressive Web App"
+	],
+	"homepage": "https://atanas.info/projects/create-pwa.html",
+	"bugs": {
+		"url": "https://github.com/scriptex/create-pwa/issues",
+		"email": "hi@atanas.info"
+	},
+	"license": "MIT",
+	"author": "Atanas Atanasov <hi@atanas.info> (https://atanas.info)",
+	"funding": "https://github.com/sponsors/scriptex",
+	"main": "src/index.js",
+	"repository": {
+		"type": "git",
+		"url": "github:scriptex/create-pwa"
+	},
 	"scripts": {
 		"pwa": "src/index.js --icon=\"./icon.png\" --launch=\"./launch.png\" --icons=false --app-cache=false --manifest=false --favicons=false --service-worker=false --launch-screens=false",
 		"test": "tape test.js"
 	},
-	"bin": {
-		"create-pwa": "./src/index.js"
-	},
-	"keywords": [
-		"PWA",
-		"CLI",
-		"progressive web app",
-		"manifest",
-		"web app",
-		"service worker",
-		"favicon generator"
-	],
-	"main": "src/index.js",
-	"repository": "git@github.com:scriptex/create-pwa.git",
-	"bugs": {
-		"url": "https://github.com/scriptex/create-pwa/issues",
-		"email": "scriptex.bg@gmail.com"
-	},
-	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
-	"license": "MIT",
 	"dependencies": {
 		"png-to-ico": "2.1.7",
 		"sharp": "0.31.0",
@@ -33,5 +37,8 @@
 	},
 	"devDependencies": {
 		"tape": "5.6.0"
+	},
+	"bin": {
+		"create-pwa": "./src/index.js"
 	}
 }
