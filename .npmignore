@@ -6,7 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Dependency directory
-node_modules/
+node_modules
 
 # Misc
 .DS_Store
@@ -14,44 +14,36 @@ node_modules/
 ._*
 .Spotlight-V100
 .Trashes
-.github
 ehthumbs.db
 Thumbs.db
 
-# EditorConfig
-.editorconfig
-
-# Git
-.gitignore
-.gitattributes
-
-# CI
-.travis.yml
-
-# lock files
-yarn.lock
-
-# Prettier
-.prettierrc
-.prettierignore
-
-# Config files
-.whitesource
-renovate.json
+# Config folders and files
+.github
 _config.yml
 _.config.yml
-
-# Misc
+.editorconfig
+.gitattributes
+.gitignore
+.nvmrc
+.prettierignore
+.prettierrc
+.stylelintignore
+.stylelintrc
+.travis.yml
+.whitesource
 create-pwa.sketch
-
-# Tests
-favicons
-icons
-launch-screens
-config.xml
-*.appcache
 create-pwa.svg
 icon.png
 launch.png
+renovate.json
+tsconfig.json
+tslint.json
+yarn.lock
+
+icons
+favicons
+launch-screens
+config.xml
 manifest.json
 service-worker.js
+*.appcache
