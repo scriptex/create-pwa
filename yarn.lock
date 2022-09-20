@@ -638,10 +638,10 @@ path-parse@^1.0.7:
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
-png-to-ico@2.1.7:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/png-to-ico/-/png-to-ico-2.1.7.tgz#acc280d1c40a62b283e9c142b5ff72aedaee6527"
-  integrity sha512-HR44p2rGA4Xx1VR+Bl3L6ulSOebnOrsag2qjYhtoEOQkr9GKsmRa/b+NzcepblZ0x91+9TunjaxComKFKA5M8A==
+png-to-ico@2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/png-to-ico/-/png-to-ico-2.1.8.tgz#fdc2eda6f197df1d6c33400707e36c3b802ac6dd"
+  integrity sha512-Nf+IIn/cZ/DIZVdGveJp86NG5uNib1ZXMiDd/8x32HCTeKSvgpyg6D/6tUBn1QO/zybzoMK0/mc3QRgAyXdv9w==
   dependencies:
     "@types/node" "^17.0.36"
     minimist "^1.2.6"
