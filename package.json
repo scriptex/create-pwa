@@ -1,6 +1,6 @@
 {
 	"name": "create-pwa",
-	"version": "2.6.0",
+	"version": "2.6.1",
 	"description": "Easily create a progressive web app",
 	"keywords": [
 		"PWA",
@@ -13,7 +13,7 @@
 		"Favicon Generator",
 		"Progressive Web App"
 	],
-	"homepage": "https://atanas.info/projects/create-pwa.html",
+	"homepage": "https://atanas.info/portfolio/open-source/create-pwa",
 	"bugs": {
 		"url": "https://github.com/scriptex/create-pwa/issues",
 		"email": "hi@atanas.info"
