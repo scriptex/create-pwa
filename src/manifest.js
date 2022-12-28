@@ -1,6 +1,3 @@
-/**
- * Internal dependencies
- */
 const { iconSizes } = require('./helpers');
 
 const icons = iconSizes.map(size => ({
@@ -11,6 +8,7 @@ const icons = iconSizes.map(size => ({
 
 /**
  * Generate a manifest.json file
+ * @param {string} name
  */
 module.exports = name => `{
 	"lang": "en",

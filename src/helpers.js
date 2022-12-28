@@ -1,6 +1,3 @@
-/**
- * External dependencies
- */
 const sharp = require('sharp');
 
 /**
@@ -19,30 +16,18 @@ const launchScreenSizes = [
 	'2388x1668', // 11" iPad Pro Landscape
 	'1668x2224', // 10.5" iPad Pro Portrait
 	'2224x1668', // 10.5" iPad Pro Landscape
-	'1536x2048', // 9.7" iPad Portrait
-	'2048x1536', // 9.7" iPad Landscape
-	'1536x2048', //7.9" iPad mini 4 Portrait
-	'2048x1536', //7.9" iPad mini 4 Landscape
+	'1536x2048', // 9.7" iPad Portrait && 7.9" iPad mini 4 Portrait
+	'2048x1536', // 9.7" iPad Landscape && 7.9" iPad mini 4 Landscape
 	'1242x2688', // iPhone XS Max Portrait
 	'2688x1242', // iPhone XS Max Landscape
-	'1125x2436', // iPhone XS Portrait
-	'2436x1125', // iPhone XS Landscape
+	'1125x2436', // iPhone XS Portrait && iPhone X Portrait
+	'2436x1125', // iPhone XS Landscape && iPhone X Landscape
 	'828x1792', // iPhone XR Portrait
 	'1792x828', // iPhone XR Landscape
-	'1125x2436', // iPhone X Portrait
-	'2436x1125', // iPhone X Landscape
-	'1242x2208', // iPhone 8 Plus Portrait
-	'2208x1242', // iPhone 8 Plus Landscape
-	'750x1334', // iPhone 8 Portrait
-	'1334x750', // iPhone 8 Landscape
-	'1242x2208', // iPhone 7 Plus Portrait
-	'2208x1242', // iPhone 7 Plus Landscape
-	'750x1334', // iPhone 7 Portrait
-	'1334x750', // iPhone 7 Landscape
-	'1242x2208', // iPhone 6s Plus Portrait
-	'2208x1242', // iPhone 6s Plus Landscape
-	'750x1334', // iPhone 6s Portrait
-	'1334x750', // iPhone 6s Landscape
+	'1242x2208', // iPhone 6s, 7, 8, 9, 10, 11, 12, 13, 14 Plus Portrait
+	'2208x1242', // iPhone 6s, 7, 8, 9, 10, 11, 12, 13, 14 Plus Landscape
+	'750x1334', // iPhone 6s, 7, 8, 9, 10, 11, 12, 13, 14 Portrait
+	'1334x750', // iPhone 7, 8, 9, 10, 11, 12, 13, 14 Landscape
 	'640x1136', // iPhone SE Portrait
 	'1136x640' // iPhone SE Landscape
 ];
@@ -89,10 +74,10 @@ const msTileFiles = msTileSizes.map(size => `favicons/ms-tile-${size}.png`);
 
 /**
  * Generate a png file with `sharp`
- * @param {File} file
- * @param {String} folder
- * @param {String[]} sizes
- * @param {String} prefix
+ * @param {string} file
+ * @param {string} folder
+ * @param {string[]} sizes
+ * @param {string} prefix
  */
 const generateFile = (file, folder, sizes, prefix) => {
 	for (const size of sizes) {

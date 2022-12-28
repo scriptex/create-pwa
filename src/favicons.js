@@ -1,16 +1,12 @@
-/**
- * External dependencies
- */
 const pngToIco = require('png-to-ico');
 const { writeFileSync } = require('fs');
 
-/**
- * Internal dependencies
- */
 const { generateFile, msTileSizes, faviconSizes, appleTouchIconSizes } = require('./helpers');
 
 /**
  * Generate all app icons
+ * @param {string} icon
+ * @param {string} folder
  */
 module.exports = (icon, folder) => {
 	generateFile(icon, folder, msTileSizes, 'ms-tile');
