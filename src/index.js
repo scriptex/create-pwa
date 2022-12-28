@@ -9,7 +9,7 @@ const { existsSync, writeFileSync, mkdirSync } = require('fs');
 const DEFAULTS = {
 	icon: './icon.png',
 	launch: './launch.png',
-	output: './'
+	output: ''
 };
 
 const argv = require('yargs').options({
@@ -65,6 +65,21 @@ const serviceWorkerTemplate = require('./sw');
 const pwd = process.cwd();
 
 /**
+ * Create a directory if one doesn't exist
+ * @param {string} dist Path to a folder inside the project's directory
+ * @param {string} name Name of the new folder to be created
+ */
+const createDirIfNotExists = (dist, name) => {
+	const dir = resolve(pwd, dist, name);
+
+	if (!existsSync(dir)) {
+		mkdirSync(dir, { recursive: true });
+	}
+
+	return dir;
+};
+
+/**
  * Get application's name
  */
 const getAppName = () => {
@@ -79,73 +94,87 @@ const getAppName = () => {
 
 /**
  * Create app's manifest.json file
- * @param {string} name
+ * @param {string} name Name of the application
+ * @param {string} dist Path to a folder inside the project's directory
  */
-const setManifest = name => {
-	writeFileSync(resolve(pwd, 'manifest.json'), manifestTemplate(name));
+const setManifest = (name, dist) => {
+	const dir = createDirIfNotExists(dist, '');
+
+	writeFileSync(resolve(dir, 'manifest.json'), manifestTemplate(name));
 };
 
 /**
  * Create app's service worker file
- * @param {string} name
+ * @param {string} name Name of the application
+ * @param {string} dist Path to a folder inside the project's directory
  */
-const setServiceWorker = name => {
-	writeFileSync(resolve(pwd, 'service-worker.js'), serviceWorkerTemplate(name));
+const setServiceWorker = (name, dist) => {
+	const dir = createDirIfNotExists(dist, '');
+
+	writeFileSync(resolve(dir, 'service-worker.js'), serviceWorkerTemplate(name));
 };
 
 /**
  * Create images with `sharp`
- * @param {string} file
- * @param {string} folder
+ * @param {string} file Path to the image file
+ * @param {string} dist Path to a folder inside the project's directory
+ * @param {string} name Name of the new folder to be created
  * @param {Function} callback
  */
-const generateImages = (file, folder, callback) => {
+const generateImages = (file, dist, name, callback) => {
 	if (!file) {
 		return;
 	}
 
-	const dir = resolve(pwd, folder);
+	const dir = createDirIfNotExists(dist, name);
 	const image = resolve(pwd, file);
-
-	if (!existsSync(dir)) {
-		mkdirSync(dir);
-	}
 
 	callback(image, dir);
 };
 
 /**
  * Create app's icons
- * @param {string} icon
+ * @param {string} file Path to the image file
+ * @param {string} dist Path to a folder inside the project's directory
  */
-const setIcons = icon => generateImages(icon, 'icons', generateIcons);
+const setIcons = (file, dist) => generateImages(file, dist, 'icons', generateIcons);
 
 /**
  * Create app's cache manifest
- * @param {string} name
+ * @param {string} name Name of the application
+ * @param {string} dist Path to a folder inside the project's directory
  */
-const setAppCache = name => {
-	writeFileSync(resolve(pwd, `${name}.appcache`), appCacheTemplate());
+const setAppCache = (name, dist) => {
+	const dir = createDirIfNotExists(dist, '');
+
+	writeFileSync(resolve(dir, `${name}.appcache`), appCacheTemplate());
 };
 
 /**
  * Create app's launch screens
- * @param {string} launchScreen
+ * @param {string} file Path to the image file
+ * @param {string} dist Path to a folder inside the project's directory
  */
-const setLaunchScreens = launchScreen => generateImages(launchScreen, 'launch-screens', generateLaunchScreens);
+const setLaunchScreens = (file, dist) => {
+	generateImages(file, dist, 'launch-screens', generateLaunchScreens);
+};
 
 /**
  * Create app's config for Microsoft browsers
+ * @param {string} dist Path to a folder inside the project's directory
  */
-const setMsTileConfig = () => {
-	writeFileSync(resolve(pwd, 'config.xml'), msTileConfigTemplate());
+const setMsTileConfig = dist => {
+	const dir = createDirIfNotExists(dist, '');
+
+	writeFileSync(resolve(dir, 'config.xml'), msTileConfigTemplate());
 };
 
 /**
  * Create app's favicons
- * @param {string} icon
+ * @param {string} file Path to the image file
+ * @param {string} dist Path to a folder inside the project's directory
  */
-const setFavicons = icon => generateImages(icon, 'favicons', generateFavicons);
+const setFavicons = (file, dist) => generateImages(file, dist, 'favicons', generateFavicons);
 
 /**
  * Create all PWA required files
@@ -153,33 +182,33 @@ const setFavicons = icon => generateImages(icon, 'favicons', generateFavicons);
 const create = async () => {
 	const name = getAppName();
 
-	const { icon, launch, icons, manifest, favicons, appCache, serviceWorker, launchScreens } = await argv;
+	const { icon, launch, output, icons, manifest, favicons, appCache, serviceWorker, launchScreens } = await argv;
 	const iconToUse = icon || DEFAULTS.icon;
 	const launchToUse = launch || DEFAULTS.launch;
 
 	if (icons) {
-		setIcons(iconToUse);
+		setIcons(iconToUse, output);
 	}
 
 	if (manifest) {
-		setManifest(name);
+		setManifest(name, output);
 	}
 
 	if (appCache) {
-		setAppCache(name);
+		setAppCache(name, output);
 	}
 
 	if (favicons) {
-		setFavicons(iconToUse);
-		setMsTileConfig();
+		setFavicons(iconToUse, output);
+		setMsTileConfig(output);
 	}
 
 	if (serviceWorker) {
-		setServiceWorker(name);
+		setServiceWorker(name, output);
 	}
 
 	if (launchScreens) {
-		setLaunchScreens(launchToUse);
+		setLaunchScreens(launchToUse, output);
 	}
 };
 
