@@ -1,6 +1,3 @@
-/**
- * Internal dependencies
- */
 const { iconFiles, launchScreenFiles, appleTouchIconFiles, faviconFiles, msTileFiles } = require('./helpers');
 
 module.exports = () => `CACHE MANIFEST

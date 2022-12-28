@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * Node dependencies
- */
 const { resolve, sep } = require('path');
 const { existsSync, writeFileSync, mkdirSync } = require('fs');
 
@@ -11,12 +8,10 @@ const { existsSync, writeFileSync, mkdirSync } = require('fs');
  */
 const DEFAULTS = {
 	icon: './icon.png',
-	launch: './launch.png'
+	launch: './launch.png',
+	output: './'
 };
 
-/**
- * External dependencies
- */
 const argv = require('yargs').options({
 	icon: {
 		default: DEFAULTS.icon,
@@ -24,6 +19,10 @@ const argv = require('yargs').options({
 	},
 	launch: {
 		default: DEFAULTS.launch,
+		type: 'string'
+	},
+	output: {
+		default: DEFAULTS.output,
 		type: 'string'
 	},
 	icons: {
@@ -52,9 +51,6 @@ const argv = require('yargs').options({
 	}
 }).argv;
 
-/**
- * Internal dependencies
- */
 const generateIcons = require('./icons');
 const manifestTemplate = require('./manifest');
 const appCacheTemplate = require('./appcache');
@@ -83,7 +79,7 @@ const getAppName = () => {
 
 /**
  * Create app's manifest.json file
- * @param {String} name
+ * @param {string} name
  */
 const setManifest = name => {
 	writeFileSync(resolve(pwd, 'manifest.json'), manifestTemplate(name));
@@ -91,7 +87,7 @@ const setManifest = name => {
 
 /**
  * Create app's service worker file
- * @param {String} name
+ * @param {string} name
  */
 const setServiceWorker = name => {
 	writeFileSync(resolve(pwd, 'service-worker.js'), serviceWorkerTemplate(name));
@@ -99,8 +95,8 @@ const setServiceWorker = name => {
 
 /**
  * Create images with `sharp`
- * @param {File} file
- * @param {String} folder
+ * @param {string} file
+ * @param {string} folder
  * @param {Function} callback
  */
 const generateImages = (file, folder, callback) => {
@@ -120,13 +116,13 @@ const generateImages = (file, folder, callback) => {
 
 /**
  * Create app's icons
- * @param {File} icon
+ * @param {string} icon
  */
 const setIcons = icon => generateImages(icon, 'icons', generateIcons);
 
 /**
  * Create app's cache manifest
- * @param {String} name
+ * @param {string} name
  */
 const setAppCache = name => {
 	writeFileSync(resolve(pwd, `${name}.appcache`), appCacheTemplate());
@@ -134,7 +130,7 @@ const setAppCache = name => {
 
 /**
  * Create app's launch screens
- * @param {File} launchScreen
+ * @param {string} launchScreen
  */
 const setLaunchScreens = launchScreen => generateImages(launchScreen, 'launch-screens', generateLaunchScreens);
 
@@ -147,18 +143,17 @@ const setMsTileConfig = () => {
 
 /**
  * Create app's favicons
- * @param {File} icon
+ * @param {string} icon
  */
 const setFavicons = icon => generateImages(icon, 'favicons', generateFavicons);
 
 /**
  * Create all PWA required files
- * @param {Object} => { icon: File, launch: File}
  */
-const create = () => {
+const create = async () => {
 	const name = getAppName();
 
-	const { icon, launch, icons, manifest, favicons, appCache, serviceWorker, launchScreens } = argv;
+	const { icon, launch, icons, manifest, favicons, appCache, serviceWorker, launchScreens } = await argv;
 	const iconToUse = icon || DEFAULTS.icon;
 	const launchToUse = launch || DEFAULTS.launch;
 

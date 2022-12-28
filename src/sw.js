@@ -1,11 +1,8 @@
-/**
- * Internal dependencies
- */
 const { iconFiles, launchScreenFiles, appleTouchIconFiles, faviconFiles, msTileFiles } = require('./helpers');
 
 /**
  * Convert a list of file to human readable list
- * @param {File[]} files
+ * @param {string[]} files
  */
 const filesToString = files => files.map(file => `'${file}'`).join(',\n\t');
 
@@ -24,6 +21,7 @@ const routes = `[
 
 /**
  * Generate a service-worker.js file
+ * @param {string} name
  */
 module.exports = name => `const CACHE_NAME = '${name}-cache';
 const urlsToCache = ${routes};
