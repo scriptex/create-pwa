@@ -73,6 +73,14 @@ This path is relative to the folder you are located in. It is recommended that t
 
 If the `launch` argument is not provided, the [default launch screen](https://github.com/scriptex/create-pwa/blob/master/launch.png) is used.
 
+3. `output`: Specifies a relative path to the output directory.
+
+This path is relative to the folder you are located in.
+
+**The `output` argument is not required.**
+
+If the `output` argument is not provided, the default value for it is empty string (the root of your project or the location of your `package.json` file).
+
 ## Usage
 
 If you want to use if from the command line, you should first install Create PWA globally:
@@ -122,7 +130,7 @@ When the files(`manifest.json` and `service-worker.js`) are ready for production
 
 Feel adviced to edit the content of the `<TileColor>` tag in the `config.xml` file as it matches the color of your application's status bar on Chrome (found in the `<meta name="color" />` tag);
 
-1.  Add the following to the `head` of your HTML file(s):
+1. Add the following to the `head` of your HTML file(s):
 
 ```html
 <link rel="manifest" href="manifest.json" />
@@ -130,7 +138,7 @@ Feel adviced to edit the content of the `<TileColor>` tag in the `config.xml` fi
 
 You can read more about the Web App Manifest [here](https://developers.google.com/web/fundamentals/web-app-manifest/).
 
-2.  Add the following snippet to your application's JavaScript bundle or place it in a `script` tag just before the closing `</body>` tag in your HTML file(s):
+2. Add the following snippet to your application's JavaScript bundle or place it in a `script` tag just before the closing `</body>` tag in your HTML file(s):
 
 ```javascript
 if ('serviceWorker' in navigator) {
@@ -477,8 +485,9 @@ You can generate each of the components above separately using the Create PWA AP
 ```javascript
 const { setAppCache } = require('create-pwa');
 const appName = 'Your application name';
+const distFolder = 'dist';
 
-setAppCache(appName);
+setAppCache(appName, distFolder);
 ```
 
 **The generated `appcache` file contains references to the application icons and application launch screens. You must have these already generated otherwise you must edit your `appcache` file and remove them.**
@@ -488,8 +497,9 @@ setAppCache(appName);
 ```javascript
 const { setIcons } = require('create-pwa');
 const appIcon = require('fs').resolve(__dirname, './your_icon.png');
+const distFolder = 'dist';
 
-setIcons(appIcon);
+setIcons(appIcon, distFolder);
 ```
 
 **The generated icons are located in the `/icons` folder.**
@@ -499,8 +509,9 @@ setIcons(appIcon);
 ```javascript
 const { setLaunchScreens } = require('create-pwa');
 const launchScreen = require('fs').resolve(__dirname, './your_launch_screen.png');
+const distFolder = 'dist';
 
-setLaunchScreens(launchScreen);
+setLaunchScreens(launchScreen, distFolder);
 ```
 
 **The generated files are located in the `/launch-screens` folder.**
@@ -510,8 +521,9 @@ setLaunchScreens(launchScreen);
 ```javascript
 const { setManifest } = require('create-pwa');
 const appName = 'Your application name';
+const distFolder = 'dist';
 
-setManifest(appName);
+setManifest(appName, distFolder);
 ```
 
 **The generated `manifest.json` file contains references to the application icons. You must have these already generated otherwise you must edit your `manifest.json` file and remove them.**
@@ -521,8 +533,9 @@ setManifest(appName);
 ```javascript
 const { setFavicons } = require('create-pwa');
 const appIcon = require('fs').resolve(__dirname, './your_icon.png');
+const distFolder = 'dist';
 
-setFavicons(appIcon);
+setFavicons(appIcon, distFolder);
 ```
 
 **The generated files are located in the `/favicons` folder.**
@@ -532,8 +545,9 @@ setFavicons(appIcon);
 ```javascript
 const { setServiceWorker } = require('create-pwa');
 const appName = 'Your application name';
+const distFolder = 'dist';
 
-setServiceWorker(appName);
+setServiceWorker(appName, distFolder);
 ```
 
 **The generated `service-worker.js` file contains references to the application icons and application launch screens. You must have these already generated otherwise you must edit your `service-worker.js` file and remove them.**

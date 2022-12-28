@@ -1,6 +1,6 @@
 {
 	"name": "create-pwa",
-	"version": "2.6.1",
+	"version": "2.7.0",
 	"description": "Easily create a progressive web app",
 	"keywords": [
 		"PWA",
@@ -27,7 +27,7 @@
 		"url": "github:scriptex/create-pwa"
 	},
 	"scripts": {
-		"pwa": "src/index.js --icon=\"./icon.png\" --launch=\"./launch.png\" --icons=false --app-cache=false --manifest=false --favicons=false --service-worker=false --launch-screens=false",
+		"pwa": "rm -rf dist && node src/index.js --icon=./icon.png --launch=./launch.png --output=dist --icons=true --app-cache=true --manifest=true --favicons=true --service-worker=true --launch-screens=true",
 		"test": "tape test.js"
 	},
 	"dependencies": {
