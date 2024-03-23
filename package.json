@@ -32,7 +32,7 @@
 	},
 	"dependencies": {
 		"png-to-ico": "2.1.8",
-		"sharp": "0.33.2",
+		"sharp": "0.33.3",
 		"yargs": "17.7.2"
 	},
 	"devDependencies": {
