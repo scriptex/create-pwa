@@ -36,7 +36,7 @@
 		"yargs": "17.7.2"
 	},
 	"devDependencies": {
-		"tape": "5.7.5"
+		"tape": "5.8.0"
 	},
 	"bin": {
 		"create-pwa": "./src/index.js"
