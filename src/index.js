@@ -12,7 +12,7 @@ const DEFAULTS = {
 	output: ''
 };
 
-const argv = require('yargs').options({
+const argv = require('yargs')().options({
 	icon: {
 		default: DEFAULTS.icon,
 		type: 'string'
