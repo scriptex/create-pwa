@@ -1,4 +1,4 @@
-const pngToIco = require('png-to-ico');
+const pngToIco = require('png-to-ico').default;
 const { writeFileSync } = require('fs');
 
 const { generateFile, msTileSizes, faviconSizes, appleTouchIconSizes } = require('./helpers');
