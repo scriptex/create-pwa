@@ -31,8 +31,8 @@
 		"test": "tape test.js"
 	},
 	"dependencies": {
-		"png-to-ico": "3.0.1",
-		"sharp": "0.35.2",
+		"png-to-ico": "3.0.2",
+		"sharp": "0.35.3",
 		"yargs": "18.0.0"
 	},
 	"devDependencies": {
