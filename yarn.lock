@@ -1001,18 +1001,19 @@ minimist@^1.2.8:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
-mock-property@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mock-property/-/mock-property-1.1.0.tgz#b38b9961476d2e54cde2033b62847b9546b3670d"
-  integrity sha512-1/JjbLoGwv87xVsutkX0XJc0M0W4kb40cZl/K41xtTViBOD9JuFPKfyMNTrLJ/ivYAd0aPqu/vduamXO0emTFQ==
+mock-property@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/mock-property/-/mock-property-1.1.2.tgz#f3e590ff4d7c9c73f697011ce6951c00dda86d96"
+  integrity sha512-Rw0vY0wBdNtm3sbANVMDUgO5Htew9xotKoqcdK/a4rW8jf5KEl6MAWGMBhjKng6gpPjX8SmO8f+65ssnxNroTw==
   dependencies:
     define-data-property "^1.1.4"
+    es-errors "^1.3.0"
     functions-have-names "^1.2.3"
-    gopd "^1.0.1"
+    gopd "^1.2.0"
     has-property-descriptors "^1.0.2"
-    hasown "^2.0.2"
+    hasown "^2.0.4"
     isarray "^2.0.5"
-    object-inspect "^1.13.2"
+    object-inspect "^1.13.4"
 
 node-exports-info@^1.6.0:
   version "1.6.0"
@@ -1024,7 +1025,7 @@ node-exports-info@^1.6.0:
     object.entries "^1.1.9"
     semver "^6.3.1"
 
-object-inspect@^1.13.2, object-inspect@^1.13.3, object-inspect@^1.13.4:
+object-inspect@^1.13.3, object-inspect@^1.13.4:
   version "1.13.4"
   resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.13.4.tgz#8375265e21bc20d0fa582c22e1b13485d6e00213"
   integrity sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==
@@ -1381,10 +1382,10 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tape@5.10.2:
-  version "5.10.2"
-  resolved "https://registry.yarnpkg.com/tape/-/tape-5.10.2.tgz#6cc893de06a055181a30b975833e270582e8775a"
-  integrity sha512-MfhVVAWa834kfYL4KgrqHblWfwkjaQvfaQhAX/bBTNQsK8oJ4ztpUe7jiemR2Vegw4pYwpnQMy51MhEmRzbbsg==
+tape@5.10.3:
+  version "5.10.3"
+  resolved "https://registry.yarnpkg.com/tape/-/tape-5.10.3.tgz#e0518d10e266b22cd535c869c0cc27b08499fe91"
+  integrity sha512-p+WLISY4ewSacY6yKWxlT6EY+iutUX2magjOlIx29LhmU08yDjWnZ7n7jBQSS8tsWYFuGW1asj3LUwkK1wW9LQ==
   dependencies:
     "@ljharb/now" "^1.0.1"
     "@ljharb/resumer" "^0.1.3"
@@ -1404,7 +1405,7 @@ tape@5.10.2:
     inherits "^2.0.4"
     is-regex "^1.2.1"
     minimist "^1.2.8"
-    mock-property "^1.1.0"
+    mock-property "^1.1.2"
     object-inspect "^1.13.4"
     object-is "^1.1.6"
     object-keys "^1.1.1"
